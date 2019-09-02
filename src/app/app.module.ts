@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { TokenizerComponent } from './tokenizer/tokenizer.component';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {RouterModule} from '@angular/router';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

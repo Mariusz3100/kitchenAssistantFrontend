@@ -2,3 +2,13 @@
 
 
 
+<div class="container">
+  <div class="row">
+    <div  *ngFor="let token of tokens" class="col-sm border">
+      {{token.text}}:{{token.tag}}:{{token.lemma}}
+    </div>
+  </div>
+</div>
+
+
+
