@@ -11,7 +11,7 @@ import {TokenizerService} from '../tokenizer.service';
 export class TokenizerComponent implements OnInit {
   paramKey = 'param';
   tokens: Token[];
-
+  phrase: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,15 +20,13 @@ export class TokenizerComponent implements OnInit {
 
   ngOnInit() {
     // Note: Below 'queryParams' can be replaced with 'params' depending on your requirements
-    this.route.queryParams.subscribe(params => {
       const paramValue = this.route.snapshot.paramMap.get(this.paramKey);
       console.log('paramValue: ' + paramValue);
+      this.phrase = paramValue;
       this.tokenizerService.parse(paramValue)
         .subscribe(tokens => {
           this.tokens = tokens;
-          console.log(this.tokens); } );
-
-    });
+         } );
   }
 
 }

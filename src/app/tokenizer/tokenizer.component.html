@@ -1,11 +1,9 @@
-<p>tokenizer works!</p>
-
-
-
 <div class="container">
+
   <div class="row">
+    <div class="col-md-1 border border-primary">{{phrase}}</div>
     <div  *ngFor="let token of tokens" class="col-sm border">
-      {{token.text}}:{{token.tag}}:{{token.lemma}}
+      {{token.text}}<br>->{{token.lemma}} <br>({{token.tag}})
     </div>
   </div>
 </div>

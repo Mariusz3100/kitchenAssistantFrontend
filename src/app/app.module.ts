@@ -6,11 +6,13 @@ import { TokenizerComponent } from './tokenizer/tokenizer.component';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { NerComponent } from './ner/ner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TokenizerComponent
+    TokenizerComponent,
+    NerComponent
   ],
   imports: [
     BrowserModule,
