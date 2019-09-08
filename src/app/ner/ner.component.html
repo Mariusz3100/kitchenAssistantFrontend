@@ -1,0 +1,12 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-1 border border-primary">{{phrase}}</div>
+    <div  *ngFor="let entity of entities" class="col-sm border">
+      {{entity.text}}<br>->{{entity.label}} <br>[{{entity.start}}-[{{entity.end}}]
+    </div>
+  </div>
+</div>
+
+
+
