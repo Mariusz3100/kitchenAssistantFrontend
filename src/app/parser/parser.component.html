@@ -1,0 +1,38 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-3 border">
+      Original phrase
+    </div>
+    <div class="col-lg-3 border">
+      entities
+    </div>
+    <div class="col-lg-3 border">
+      entitiless
+    </div>
+    <div class="col-lg-3 border">
+      tokens
+    </div>
+  </div>
+  <div *ngFor="let result of results" class="row">
+    <div class="col-lg-3 border">
+      {{result.originalPhrase}}
+    </div>
+
+    <div class="col-lg-3 border">
+      {{result.entities}}
+    </div>
+    <div class="col-lg-3 border">
+      {{result.entityLess}}
+    </div>
+    <div class="col-lg-3 border">
+      <span *ngFor="let token of result.tokens" class="{{token.wordType}}">
+        {{token.text}}
+      </span>
+
+
+    </div>
+  </div>
+
+
+</div>

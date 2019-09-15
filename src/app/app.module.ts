@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { NerComponent } from './ner/ner.component';
+import { ParserComponent } from './parser/parser.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TokenizerComponent,
-    NerComponent
+    NerComponent,
+    ParserComponent
   ],
   imports: [
     BrowserModule,

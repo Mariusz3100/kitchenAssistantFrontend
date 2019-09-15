@@ -2,7 +2,7 @@ export class Token {
   text: string;
   lemma: string;
   tag: string;
-
+  wordType: string;
 
 
 
