@@ -9,10 +9,6 @@ const routes: Routes = [
   { path: 'tokenizer/:param', component: TokenizerComponent },
   { path: 'ner/:param', component: NerComponent },
   { path: 'aiParse', component: ParserComponent },
-
-
-
-  // { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];
 
 

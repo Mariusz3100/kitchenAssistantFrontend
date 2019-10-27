@@ -1,38 +1,134 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-lg-3 border">
+    <div class="col-lg-1 border">
       Original phrase
     </div>
-    <div class="col-lg-3 border">
+    <div class="col-lg-1 border">
       entities
     </div>
-    <div class="col-lg-3 border">
+    <div class="col-lg-1 border">
       entitiless
     </div>
-    <div class="col-lg-3 border">
+    <div class="col-lg-1 border">
       tokens
+    </div>
+    <div class="col-lg-1 border">
+      quantityless tokens
+    </div>
+    <div class="col-lg-1 border">
+      tag : pos : relationToParentType : head
+    </div>
+    <div class="col-lg-1 border">
+      corrected phrase
+    </div>
+
+    <div class="col-lg-2 border">
+      corrected tokens
+    </div>
+    <div class="col-lg-2 border">
+      Original tokens
     </div>
   </div>
   <div *ngFor="let result of results" class="row">
-    <div class="col-lg-3 border">
+    <div class="col-lg-1 border">
       {{result.originalPhrase}}
     </div>
 
-    <div class="col-lg-3 border">
+    <div class="col-lg-1 border">
       {{result.entities}}
     </div>
-    <div class="col-lg-3 border">
+    <div class="col-lg-1 border">
       {{result.entityLess}}
     </div>
-    <div class="col-lg-3 border">
+    <div class="col-lg-1 border">
       <span *ngFor="let token of result.tokens" class="{{token.wordType}}">
-        {{token.text}}
+        {{token.text}}: {{token.relationToParentType}}<br>
       </span>
 
 
     </div>
+    <div class="col-lg-1 border">
+      <span *ngFor="let token of result.tokens">
+        <div *ngIf="token.wordType!='QuantityElement'">
+          <span class="{{token.wordType}}">
+            {{token.text}}
+          </span>
+          <span>
+            : {{token.lemma}}
+          </span>
+        </div>
+      </span>
+
+
+    </div>
+    <div class="col-lg-1 border">
+      <span *ngFor="let token of result.tokens">
+        <div *ngIf="token.wordType!='QuantityElement'">
+           {{token.tag}} : {{token.pos}} : {{token.relationToParentType}} : {{token.head}}
+
+        </div>
+      </span>
+
+
+    </div>
+
+    <div class="col-lg-1 border">
+     {{result.correctedPhrase}}
+
+
+    </div>
+
+
+
+    <div class="col-lg-2 border">
+      <span *ngFor="let token of result.correctedTokens">
+        <div *ngIf="token.wordType!='QuantityElement'">
+           {{token.text}}: {{token.tag}} : {{token.pos}} : {{token.relationToParentType}} : {{token.head}}
+
+        </div>
+      </span>
+
+
+    </div>
+
+    <div class="col-lg-2 border">
+      <div *ngFor="let token of result.tokens">
+        <span class="{{token.wordType}}">
+          {{token.text}}
+        </span>
+        <span>
+          : {{token.tag}} : {{token.pos}} : {{token.relationToParentType}} : {{token.head}}
+        </span>
+      </div>
+
+    </div>
   </div>
+
+
+  <!--  csv results:-->
+
+
+  <!--  <div *ngFor="let result of results">-->
+  <!--      {{result.originalPhrase}};;-->
+
+  <!--      {{result.entities}};;-->
+  <!--      {{result.entityLess}};;-->
+  <!--      <span *ngFor="let token of result.tokens" class="{{token.wordType}}">-->
+  <!--        {{token.text}}<span class="white  ">|</span>-->
+  <!--      </span>;;-->
+
+
+  <!--      <span *ngFor="let token of result.tokens">-->
+  <!--        <span *ngIf="token.wordType!='QuantityElement'">-->
+  <!--          <span class="{{token.wordType}}">-->
+  <!--            {{token.text}}-->
+  <!--          </span>-->
+  <!--        </span>-->
+  <!--      </span>;;-->
+
+
+  <!--  </div>-->
 
 
 </div>
