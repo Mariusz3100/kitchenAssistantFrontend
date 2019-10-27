@@ -3,8 +3,9 @@ export class Token {
   lemma: string;
   tag: string;
   wordType: string;
-
-
+  relationToParentType: string;
+  pos: string;
+  head: string;
 
 }
 // {"text": "2", "lemma": "2", "tag": "CD"}

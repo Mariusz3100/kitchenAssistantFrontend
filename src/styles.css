@@ -2,3 +2,23 @@
 .QuantityElement{
   background-color:cornflowerblue;
 }
+
+.ProductElement{
+  background-color:green;
+}
+
+.PunctuationElement{
+  background-color:blueviolet;
+}
+
+.white{
+  background-color:white;
+}
+
+
+
+  .container{
+    max-width: 3000px;
+    min-width: 3000px
+  }
+

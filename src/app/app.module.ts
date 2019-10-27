@@ -8,13 +8,15 @@ import {RouterModule} from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { NerComponent } from './ner/ner.component';
 import { ParserComponent } from './parser/parser.component';
+import { PhrasesDisplayerComponent } from './phrases-displayer/phrases-displayer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TokenizerComponent,
     NerComponent,
-    ParserComponent
+    ParserComponent,
+    PhrasesDisplayerComponent
   ],
   imports: [
     BrowserModule,
