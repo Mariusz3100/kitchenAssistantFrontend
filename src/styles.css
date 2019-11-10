@@ -14,11 +14,138 @@
 .white{
   background-color:white;
 }
+.container{
+   max-width: 4000px;
+   min-width: 4000px
+}
 
 
 
-  .container{
-    max-width: 3000px;
-    min-width: 3000px
-  }
 
+
+.CD{
+  background-color:cornflowerblue;
+}
+
+.NN{
+  background-color: green;
+}
+
+
+.IN{
+  background-color: brown;
+}
+
+.NNS{
+  background-color: #004000;
+
+}
+.VBG{
+  background-color: mediumslateblue;
+
+}
+.VBN{
+  background-color: deeppink;
+
+}
+
+.JJ{
+  background-color: orange;
+}
+
+
+
+
+
+
+.NUM{
+  color: cornflowerblue;
+
+}
+
+.NOUN{
+  color: green;
+}
+
+.ADP{
+  color: brown;
+}
+
+.PUNCT{
+  color:blueviolet;
+}
+
+.VERB{
+  color: mediumslateblue;
+}
+
+.ADJ {
+  color: orange;
+}
+
+
+
+
+
+
+
+
+
+.ROOT{
+  border: 5px solid #004000;
+}
+
+.nummod{
+  border:solid cornflowerblue;
+}
+
+.prep{
+  border:solid brown;
+
+}
+
+.xcomp{
+  border: dotted mediumslateblue;
+
+}
+
+.pobj{
+  border: dotted #004000;
+}
+
+.amod{
+  border: dotted orange;
+}
+
+.dobj{
+  border: dotted yellow;
+
+}
+
+
+.nsubj{
+  border: dotted yellowgreen;
+
+}
+
+.compound{
+  border: solid darkmagenta;
+}
+
+.punct{
+  border: solid blueviolet;
+
+}
+
+.dobj{
+  border: dotted #004000;
+
+}
+
+
+
+.expected{
+  border: 5px solid #004000;
+
+  height: 100%;
+}

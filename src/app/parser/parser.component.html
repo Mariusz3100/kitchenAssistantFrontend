@@ -2,6 +2,9 @@
 
   <div class="row">
     <div class="col-lg-1 border">
+      Amount
+    </div>
+    <div class="col-lg-1 border">
       Original phrase
     </div>
     <div class="col-lg-1 border">
@@ -23,14 +26,25 @@
       corrected phrase
     </div>
 
-    <div class="col-lg-2 border">
+    <div class="col-lg-1 border">
       corrected tokens
     </div>
-    <div class="col-lg-2 border">
+    <div class="col-lg-1 border">
       Original tokens
     </div>
   </div>
   <div *ngFor="let result of results" class="row">
+    <div class="col-lg-1 border">
+      <div class="expected">
+        {{result.expectedResult.amount}}
+        <br>
+        {{result.expectedResult.amountType}}
+        <br>
+        {{result.expectedResult.foodMatch}}
+
+      </div>
+    </div>
+
     <div class="col-lg-1 border">
       {{result.originalPhrase}}
     </div>
@@ -81,10 +95,10 @@
 
 
 
-    <div class="col-lg-2 border">
+    <div class="col-lg-1 border">
       <span *ngFor="let token of result.correctedTokens">
         <div *ngIf="token.wordType!='QuantityElement'">
-           {{token.text}}: {{token.tag}} : {{token.pos}} : {{token.relationToParentType}} : {{token.head}}
+          {{token.text}}:<span class="{{token.tag}}"> {{token.tag}}</span> : <span class="{{token.pos}}">{{token.pos}} </span>: <span class="{{token.relationToParentType}}">{{token.relationToParentType}} </span>: {{token.head}}
 
         </div>
       </span>
@@ -92,13 +106,13 @@
 
     </div>
 
-    <div class="col-lg-2 border">
+    <div class="col-lg-1 border">
       <div *ngFor="let token of result.tokens">
-        <span class="{{token.wordType}}">
+        <span>
           {{token.text}}
         </span>
         <span>
-          : {{token.tag}} : {{token.pos}} : {{token.relationToParentType}} : {{token.head}}
+          <span class="{{token.tag}}"> {{token.tag}}</span> : <span class="{{token.pos}}">{{token.pos}} </span> :  <span class="{{token.relationToParentType}}">{{token.relationToParentType}} </span> : {{token.head}}
         </span>
       </div>
 
