@@ -5,6 +5,8 @@ import {Token} from './app/Token';
 export class ParsingResults {
   originalPhrase: string;
   expectedResult: ExpectedResult;
+  calculatedResult: CalculatedResults;
+
   entities: string;
   entityLess: string;
 //  tokenString: string;
