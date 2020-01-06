@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="col-lg-1 border">
-      Amount
+      Edaman results
     </div>
     <div class="col-lg-1 border">
       Original phrase
@@ -33,11 +33,18 @@
       Original tokens
     </div>
     <div class="col-lg-1 border">
+      original dependencies
+    </div>
+    <div class="col-lg-1 border">
+      dependencies from corrected
+    </div>
+    <div class="col-lg-1 border">
       Calculation Results
     </div>
   </div>
   <div *ngFor="let result of results" class="row">
     <div class="col-lg-1 border">
+<!--      Edaman results-->
       <div class="expected">
         {{result.expectedResult.amount}}
         <br>
@@ -49,16 +56,20 @@
     </div>
 
     <div class="col-lg-1 border">
+<!--      Original phrase-->
       {{result.originalPhrase}}
     </div>
 
     <div class="col-lg-1 border">
+<!--      entities-->
       {{result.entities}}
     </div>
     <div class="col-lg-1 border">
+<!--      entityless-->
       {{result.entityLess}}
     </div>
     <div class="col-lg-1 border">
+<!--        tokens-->
       <span *ngFor="let token of result.tokens" class="{{token.wordType}}">
         {{token.text}}: {{token.relationToParentType}}<br>
       </span>
@@ -66,6 +77,7 @@
 
     </div>
     <div class="col-lg-1 border">
+<!--      quantityless tokens-->
       <span *ngFor="let token of result.tokens">
         <div *ngIf="token.wordType!='QuantityElement'">
           <span class="{{token.wordType}}">
@@ -80,6 +92,7 @@
 
     </div>
     <div class="col-lg-1 border">
+<!--      tag : pos : relationToParentType : head-->
       <span *ngFor="let token of result.tokens">
         <div *ngIf="token.wordType!='QuantityElement'">
            {{token.tag}} : {{token.pos}} : {{token.relationToParentType}} : {{token.head}}
@@ -91,6 +104,7 @@
     </div>
 
     <div class="col-lg-1 border">
+<!--      corrected phrase-->
      {{result.correctedPhrase}}
 
 
@@ -99,6 +113,7 @@
 
 
     <div class="col-lg-1 border">
+<!--      corrected tokens-->
       <span *ngFor="let token of result.correctedTokens">
         <div *ngIf="token.wordType!='QuantityElement'">
           {{token.text}}:<span class="{{token.tag}}"> {{token.tag}}</span> : <span class="{{token.pos}}">{{token.pos}} </span>: <span class="{{token.relationToParentType}}">{{token.relationToParentType}} </span>: {{token.head}}
@@ -110,6 +125,7 @@
     </div>
 
     <div class="col-lg-1 border">
+<!--      Original tokens-->
       <div *ngFor="let token of result.tokens">
         <span>
           {{token.text}}
@@ -121,6 +137,25 @@
 
     </div>
     <div class="col-lg-1 border">
+      <!-- original dependencies-->
+      <div *ngFor="let connotation of result.originalConnotations">
+        <span *ngFor="let token of connotation">
+          {{token.text}}
+        </span>
+      </div>
+
+    </div>
+    <div class="col-lg-1 border">
+      <!-- dependencies from corrected -->
+      <div *ngFor="let connotation of result.correctedTokens">
+        <span *ngFor="let token of connotation">
+          {{token.text}}
+        </span>
+      </div>
+
+    </div>
+    <div class="col-lg-1 border">
+      <!-- Calculation Results -->
       <span *ngFor="let token of result.calculatedResult.notFound" class="pink">
         {{token}}
       </span>

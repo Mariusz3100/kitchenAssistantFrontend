@@ -10,15 +10,15 @@ import {ParsingResults} from '../ParsingResults';
 export class ParsedPhraseService {
 
 
-  private baseUrl = 'http://localhost:8080/parseIngredients';
+//  private baseUrl = 'http://localhost:8080/parseIngredients';
 
   constructor(private http: Http) { }
 
 
-  getParsedPhrases(): Observable<ParsingResults[]> {
-    const fullUrl = `${this.baseUrl}`;
+  getParsedPhrases(dataUrl): Observable<ParsingResults[]> {
+
     const results = this.http
-      .get(`${fullUrl}`)
+      .get(`${dataUrl}`)
       .map(result => result.json().results);
     return results;
   }}

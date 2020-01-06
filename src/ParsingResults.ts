@@ -6,6 +6,8 @@ export class ParsingResults {
   originalPhrase: string;
   expectedResult: ExpectedResult;
   calculatedResult: CalculatedResults;
+  originalConnotations: Token[][]
+  correctedConnotations: Token[][]
 
   entities: string;
   entityLess: string;

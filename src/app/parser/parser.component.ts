@@ -12,6 +12,7 @@ import {ParsingResults} from '../../ParsingResults';
 })
 export class ParserComponent implements OnInit {
   paramKey = 'param';
+  private baseUrl = 'http://localhost:8080/parseIngredients';
   results: ParsingResults[];
   phrase: string;
 
@@ -21,7 +22,7 @@ export class ParserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.parsingService.getParsedPhrases()
+    this.parsingService.getParsedPhrases(this.baseUrl)
       .subscribe(results => {
         console.log(results);
         console.log(results.length);
