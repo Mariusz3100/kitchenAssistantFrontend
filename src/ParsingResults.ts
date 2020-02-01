@@ -1,13 +1,16 @@
 import {Token} from './app/Token';
+import {WordDependency} from './app/WordDependency';
 
 
 
 export class ParsingResults {
   originalPhrase: string;
+  productTypeFound: string;
   expectedResult: ExpectedResult;
-  calculatedResult: CalculatedResults;
-  originalConnotations: Token[][]
-  correctedConnotations: Token[][]
+  restrictivelyCalculatedResult: CalculatedResults;
+  permisivelyCalculatedResult: CalculatedResults;
+  originalConnotations: WordDependency[];
+  correctedConnotations: WordDependency[];
 
   entities: string;
   entityLess: string;

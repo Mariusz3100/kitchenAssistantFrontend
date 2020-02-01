@@ -11,9 +11,6 @@
       entities
     </div>
     <div class="col-lg-1 border">
-      entitiless
-    </div>
-    <div class="col-lg-1 border">
       tokens
     </div>
     <div class="col-lg-1 border">
@@ -39,8 +36,9 @@
       dependencies from corrected
     </div>
     <div class="col-lg-1 border">
-      Calculation Results
+      Calculation Results <span  class="pink">NOT FOUND</span> <span  class="green">FOUND</span><span  class="red">IMPROPERLY FOUND</span>
     </div>
+
   </div>
   <div *ngFor="let result of results" class="row">
     <div class="col-lg-1 border">
@@ -63,9 +61,7 @@
     <div class="col-lg-1 border">
 <!--      entities-->
       {{result.entities}}
-    </div>
-    <div class="col-lg-1 border">
-<!--      entityless-->
+      <br>entityless:
       {{result.entityLess}}
     </div>
     <div class="col-lg-1 border">
@@ -139,32 +135,46 @@
     <div class="col-lg-1 border">
       <!-- original dependencies-->
       <div *ngFor="let connotation of result.originalConnotations">
-        <span *ngFor="let token of connotation">
-          {{token.text}}
-        </span>
+        {{connotation.child.text}} ({{connotation.head.text}})
       </div>
 
     </div>
     <div class="col-lg-1 border">
       <!-- dependencies from corrected -->
-      <div *ngFor="let connotation of result.correctedTokens">
-        <span *ngFor="let token of connotation">
-          {{token.text}}
-        </span>
+      <div *ngFor="let connotation of result.correctedConnotations">
+        {{connotation.child.text}} ({{connotation.head.text}})
       </div>
 
     </div>
     <div class="col-lg-1 border">
       <!-- Calculation Results -->
-      <span *ngFor="let token of result.calculatedResult.notFound" class="pink">
-        {{token}}
-      </span>
-      <span *ngFor="let token of result.calculatedResult.found" class="green">
-        {{token}}
-      </span>
-      <span *ngFor="let token of result.calculatedResult.improperlyFound" class="red">
-        {{token}}
-      </span>
+      <div>Restrictive:</div>
+      <div>
+          <span *ngFor="let token of result.restrictivelyCalculatedResult.notFound" class="pink">
+          {{token}}
+        </span>
+        <span *ngFor="let token of result.restrictivelyCalculatedResult.found" class="green">
+          {{token}}
+        </span>
+        <span *ngFor="let token of result.restrictivelyCalculatedResult.improperlyFound" class="red">
+          {{token}}
+        </span>
+      </div>
+
+      <div>Permissive:</div>
+      <div>
+          <span *ngFor="let token of result.permisivelyCalculatedResult.notFound" class="pink">
+          {{token}}
+        </span>
+        <span *ngFor="let token of result.permisivelyCalculatedResult.found" class="green">
+          {{token}}
+        </span>
+        <span *ngFor="let token of result.permisivelyCalculatedResult.improperlyFound" class="red">
+          {{token}}
+        </span>
+      </div>
+      <div>Food Type: <b>{{result.productTypeFound}}</b></div>
+
     </div>
   </div>
 
