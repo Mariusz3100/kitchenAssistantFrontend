@@ -11,7 +11,9 @@ export class ParsingResults {
   permisivelyCalculatedResult: CalculatedResults;
   originalConnotations: WordDependency[];
   correctedConnotations: WordDependency[];
+  dependencyConotationsFound: WordDependency[];
 
+  adjacentyConotationsFound: string[][];
   entities: string;
   entityLess: string;
 //  tokenString: string;
