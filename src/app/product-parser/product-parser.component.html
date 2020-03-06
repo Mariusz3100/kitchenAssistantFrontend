@@ -1,0 +1,182 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-1 border">
+      expected nlp results
+    </div>
+    <div class="col-lg-1 border">
+      Original phrase
+    </div>
+    <div class="col-lg-1 border">
+      entities
+    </div>
+    <div class="col-lg-1 border">
+      entitiless
+    </div>
+    <div class="col-lg-1 border">
+      final tokens
+    </div>
+    <div class="col-lg-1 border">
+      quantityless tokens
+    </div>
+    <div class="col-lg-1 border">
+      tag : pos : relationToParentType : head
+    </div>
+    <div class="col-lg-1 border">
+      corrected phrase
+    </div>
+
+    <div class="col-lg-1 border">
+      corrected tokens
+    </div>
+    <div class="col-lg-1 border">
+      Original tokens
+    </div>
+    <div class="col-lg-1 border">
+      Calculation Results
+    </div>
+  </div>
+  <div *ngFor="let result of results" class="row">
+    <div class="col-lg-1 border">
+      <!--expected nlp results-->
+      <!--      Original phrase-->
+      {{result.originalPhrase}}
+      <!--      Edaman results-->
+      <div class="expected">
+        {{result.expectedResult.amount}}
+        <br>
+        {{result.expectedResult.amountType}}
+        <br>
+        {{result.expectedResult.foodMatch}}
+        <br>
+        {{result.expectedResult.foodTypeCategory}}
+      </div>
+    </div>
+
+    <div class="col-lg-1 border">
+      <!--      Original phrase-->
+      {{result.originalPhrase}}
+    </div>
+
+    <div class="col-lg-1 border">
+      <!--      entities-->
+      <div *ngIf="result.entities">
+        <div *ngFor="let x of result.entities.split('<br>')">
+          {{x}}
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-1 border">
+      <!--      entitiless-->
+      {{result.entityLess}}
+    </div>
+    <div class="col-lg-1 border">
+      <!--      final tokens-->
+      <span *ngFor="let token of result.tokens" class="{{token.wordType}}">
+        {{token.text}}: {{token.relationToParentType}}<br>
+      </span>
+
+
+    </div>
+
+    <div class="col-lg-1 border">
+      <!--      quantityless tokens-->
+
+      <span *ngFor="let token of result.tokens">
+        <div *ngIf="token.wordType!='QuantityElement'">
+          <span class="{{token.wordType}}">
+            {{token.text}}
+          </span>
+          <span>
+            : {{token.lemma}}
+          </span>
+        </div>
+      </span>
+    </div>
+    <div class="col-lg-1 border">
+      <!--       tag : pos : relationToParentType : head -->
+      <span *ngFor="let token of result.tokens">
+        <div *ngIf="token.wordType!='QuantityElement'">
+           {{token.tag}} : {{token.pos}} : {{token.relationToParentType}} : {{token.head}}
+
+        </div>
+      </span>
+
+    </div>
+    <div class="col-lg-1 border">
+      <!--      corrected phrase-->
+
+      {{result.correctedPhrase}}
+
+    </div>
+
+    <div class="col-lg-1 border">
+      <!--      corrected tokens-->
+
+      <span *ngFor="let token of result.correctedTokens">
+        <div *ngIf="token.wordType!='QuantityElement'">
+          {{token.text}}:<span class="{{token.tag}}"> {{token.tag}}</span> : <span
+          class="{{token.pos}}">{{token.pos}} </span>: <span
+          class="{{token.relationToParentType}}">{{token.relationToParentType}} </span>: {{token.head}}
+
+        </div>
+      </span>
+    </div>
+
+
+    <div class="col-lg-1 border">
+      <!--      Original tokens-->
+      <div *ngFor="let token of result.tokens">
+
+        <span>
+          {{token.text}}
+        </span>
+        <span>
+          <span class="{{token.tag}}"> {{token.tag}}</span> : <span class="{{token.pos}}">{{token.pos}} </span> :  <span
+          class="{{token.relationToParentType}}">{{token.relationToParentType}} </span> : {{token.head}}
+        </span>
+      </div>
+    </div>
+
+    <div class="col-lg-1 border">
+      <!--      Calculation Results-->
+      <div>Restrictive:
+        <span *ngFor="let token of result.restrictivelyCalculatedResult.markedWords">
+          [{{token}}]&nbsp;
+        </span>
+      </div>
+
+      <div>
+          <span *ngFor="let token of result.restrictivelyCalculatedResult.notFound" class="pink">
+          {{token}}
+        </span>
+        <span *ngFor="let token of result.restrictivelyCalculatedResult.found" class="green">
+          {{token}}
+        </span>
+        <span *ngFor="let token of result.restrictivelyCalculatedResult.improperlyFound" class="red">
+          {{token}}
+        </span>
+      </div>
+
+      <div>Permissive:
+        <span *ngFor="let token of result.permisivelyCalculatedResult.markedWords">
+          [{{token}}]&nbsp;
+        </span>
+      </div>
+      <div>
+          <span *ngFor="let token of result.permisivelyCalculatedResult.notFound" class="pink">
+          {{token}}
+        </span>
+        <span *ngFor="let token of result.permisivelyCalculatedResult.found" class="green">
+          {{token}}
+        </span>
+        <span *ngFor="let token of result.permisivelyCalculatedResult.improperlyFound" class="red">
+          {{token}}
+        </span>
+      </div>
+      <div>Food Type: <b [className]="result.productTypeFound==result.expectedResult.foodTypeCategory ? 'green' : 'red'">{{result.productTypeFound}}({{result.expectedResult.foodTypeCategory}})</b></div>
+  </div>
+
+  </div>
+</div>
