@@ -9,6 +9,10 @@ export class ParsingResults {
   expectedResult: ExpectedResult;
   restrictivelyCalculatedResult: CalculatedResults;
   permisivelyCalculatedResult: CalculatedResults;
+  restrictivelyCalculatedResultForPhrase: CalculatedResults;
+  permisivelyCalculatedResultForPhrase: CalculatedResults;
+
+
   originalConnotations: WordDependency[];
   correctedConnotations: WordDependency[];
   dependencyConotationsFound: WordDependency[];
