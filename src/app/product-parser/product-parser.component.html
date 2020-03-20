@@ -23,17 +23,18 @@
       tag : pos : relationToParentType : head
     </div>
     <div class="col-lg-1 border">
-      corrected phrase
+      corrected phrase and tokens
     </div>
 
-    <div class="col-lg-1 border">
-      corrected tokens
-    </div>
+
     <div class="col-lg-1 border">
       Original tokens
     </div>
     <div class="col-lg-1 border">
       Calculation Results <span class="pink">NOT FOUND</span> <span class="green">FOUND</span><span class="red">IMPROPERLY FOUND</span>
+    </div>
+    <div class="col-lg-1 border">
+      Full phrase calculation Results <span class="pink">NOT FOUND</span> <span class="green">FOUND</span><span class="red">IMPROPERLY FOUND</span>
     </div>
   </div>
   <div *ngFor="let result of results" class="row">
@@ -105,14 +106,9 @@
 
     </div>
     <div class="col-lg-1 border">
-      <!--      corrected phrase-->
+      <!--      corrected phrase and tokens-->
 
       {{result.correctedPhrase}}
-
-    </div>
-
-    <div class="col-lg-1 border">
-      <!--      corrected tokens-->
 
       <span *ngFor="let token of result.correctedTokens">
         <div *ngIf="token.wordType!='QuantityElement'">
@@ -123,6 +119,8 @@
         </div>
       </span>
     </div>
+
+
 
 
     <div class="col-lg-1 border">
@@ -140,7 +138,7 @@
     </div>
 
     <div class="col-lg-1 border">
-      <!--      Calculation Results-->
+      <!--      Calculation Results for bigger phrase-->
       <div>Restrictive:
         <span *ngFor="let token of result.restrictivelyCalculatedResult.markedWords">
           [{{token}}]&nbsp;
@@ -177,6 +175,44 @@
       </div>
       <div>Food Type: <b [className]="result.productTypeFound==result.expectedResult.foodTypeCategory ? 'green' : 'red'">{{result.productTypeFound}}({{result.expectedResult.foodTypeCategory}})</b></div>
   </div>
+    <div class="col-lg-1 border">
+      <!--      Calculation Results-->
+      <div>Restrictive:
+        <span *ngFor="let token of result.restrictivelyCalculatedResultForPhrase.markedWords">
+          [{{token}}]&nbsp;
+        </span>
+      </div>
+
+      <div>
+          <span *ngFor="let token of result.restrictivelyCalculatedResultForPhrase.notFound" class="pink">
+          {{token}}
+        </span>
+        <span *ngFor="let token of result.restrictivelyCalculatedResultForPhrase.found" class="green">
+          {{token}}
+        </span>
+        <span *ngFor="let token of result.restrictivelyCalculatedResultForPhrase.improperlyFound" class="red">
+          {{token}}
+        </span>
+      </div>
+
+      <div>Permissive:
+        <span *ngFor="let token of result.permisivelyCalculatedResultForPhrase.markedWords">
+          [{{token}}]&nbsp;
+        </span>
+      </div>
+      <div>
+          <span *ngFor="let token of result.permisivelyCalculatedResultForPhrase.notFound" class="pink">
+          {{token}}
+        </span>
+        <span *ngFor="let token of result.permisivelyCalculatedResultForPhrase.found" class="green">
+          {{token}}
+        </span>
+        <span *ngFor="let token of result.permisivelyCalculatedResultForPhrase.improperlyFound" class="red">
+          {{token}}
+        </span>
+      </div>
+      <div>Food Type: <b [className]="result.productTypeFound==result.expectedResult.foodTypeCategory ? 'green' : 'red'">{{result.productTypeFound}}({{result.expectedResult.foodTypeCategory}})</b></div>
+    </div>
 
   </div>
 </div>
