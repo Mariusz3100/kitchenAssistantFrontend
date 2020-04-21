@@ -4,15 +4,13 @@
     <div class="col-lg-1 border">
       expected nlp results
     </div>
-    <div class="col-lg-1 border">
+    <div class="col-lg-2 border">
       Original phrase
     </div>
     <div class="col-lg-1 border">
-      entities
+      entities + entitiless
     </div>
-    <div class="col-lg-1 border">
-      entitiless
-    </div>
+
     <div class="col-lg-1 border">
       final tokens
     </div>
@@ -54,22 +52,49 @@
       </div>
     </div>
 
-    <div class="col-lg-1 border">
+    <div class="col-lg-2 border">
       <!--      Original phrase-->
       {{result.originalPhrase}}
+
+      <div class="row">
+        <div class="col-sm-1 border">
+          <span style="font-size: xx-small">details phrase:</span>
+        </div>
+        <div *ngFor="let  word of result.product.detailsName"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
+          <span style="font-size: x-small">{{word.word}}</span>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-1 border">
+          <span style="font-size: xx-small">search phrase:</span>
+        </div>
+        <div *ngFor="let  word of result.product.searchName"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
+          <span style="font-size: x-small">{{word.word}}</span>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-1 border">
+          <span style="font-size: xx-small">ingredients phrase:</span>
+        </div>
+        <div *ngFor="let  word of result.product.ingredients"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
+          <span style="font-size: x-small">{{word.word}}</span>
+        </div>
+
+      </div>
+
     </div>
 
+
     <div class="col-lg-1 border">
-      <!--      entities-->
+      <!--     entities and entitiless-->
       <div *ngIf="result.entities">
         <div *ngFor="let x of result.entities.split('<br>')">
           {{x}}
         </div>
 
       </div>
-    </div>
-    <div class="col-lg-1 border">
-      <!--      entitiless-->
       {{result.entityLess}}
     </div>
     <div class="col-lg-1 border">
@@ -176,7 +201,7 @@
       <div>Food Type: <b [className]="result.productTypeFound==result.expectedResult.foodTypeCategory ? 'green' : 'red'">{{result.productTypeFound}}({{result.expectedResult.foodTypeCategory}})</b></div>
   </div>
     <div class="col-lg-1 border">
-      <!--      Calculation Results-->
+      <!--      Calculation Results for bigger phrase-->
       <div>Restrictive:
         <span *ngFor="let token of result.restrictivelyCalculatedResultForPhrase.markedWords">
           [{{token}}]&nbsp;

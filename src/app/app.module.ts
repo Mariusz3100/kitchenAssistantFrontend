@@ -8,7 +8,6 @@ import {RouterModule} from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { NerComponent } from './ner/ner.component';
 import { ParserComponent } from './parser/parser.component';
-import { PhrasesDisplayerComponent } from './phrases-displayer/phrases-displayer.component';
 import { ProductParserComponent } from './product-parser/product-parser.component';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { ProductParserComponent } from './product-parser/product-parser.componen
     TokenizerComponent,
     NerComponent,
     ParserComponent,
-    PhrasesDisplayerComponent,
     ProductParserComponent,
   ],
   imports: [

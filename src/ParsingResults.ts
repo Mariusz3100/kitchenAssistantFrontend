@@ -1,5 +1,6 @@
 import {Token} from './app/Token';
 import {WordDependency} from './app/WordDependency';
+import {Product} from './app/Product';
 
 
 
@@ -25,6 +26,9 @@ export class ParsingResults {
   correctedPhrase: string;
   correctedTokens: Token[];
 
+
+
+  product: Product;
 
 }
 // {"text": "2", "lemma": "2", "tag": "CD"}
