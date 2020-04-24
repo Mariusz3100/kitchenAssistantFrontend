@@ -60,7 +60,7 @@
         <div class="col-sm-1 border">
           <span style="font-size: xx-small">details phrase:</span>
         </div>
-        <div *ngFor="let  word of result.product.detailsName"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
+        <div *ngFor="let  word of result.product.detailsNameResults"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
           <span style="font-size: x-small">{{word.word}}</span>
         </div>
 
@@ -69,7 +69,7 @@
         <div class="col-sm-1 border">
           <span style="font-size: xx-small">search phrase:</span>
         </div>
-        <div *ngFor="let  word of result.product.searchName"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
+        <div *ngFor="let  word of result.product.searchNameResults"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
           <span style="font-size: x-small">{{word.word}}</span>
         </div>
 
@@ -78,7 +78,7 @@
         <div class="col-sm-1 border">
           <span style="font-size: xx-small">ingredients phrase:</span>
         </div>
-        <div *ngFor="let  word of result.product.ingredients"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
+        <div *ngFor="let  word of result.product.ingredientsNameResults"  class="col-sm-1 border">
           <span style="font-size: x-small">{{word.word}}</span>
         </div>
 
