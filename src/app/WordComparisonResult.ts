@@ -1,4 +1,4 @@
-export class WordParsed {
+export class WordComparisonResult {
   word: string;
   match: boolean;
 

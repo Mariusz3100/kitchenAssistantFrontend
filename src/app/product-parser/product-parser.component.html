@@ -5,10 +5,10 @@
       expected nlp results
     </div>
     <div class="col-lg-2 border">
-      Original phrase
+     Comparing Original phrases
     </div>
     <div class="col-lg-1 border">
-      entities + entitiless
+      brands and entities
     </div>
 
     <div class="col-lg-1 border">
@@ -29,10 +29,10 @@
       Original tokens
     </div>
     <div class="col-lg-1 border">
-      Calculation Results <span class="pink">NOT FOUND</span> <span class="green">FOUND</span><span class="red">IMPROPERLY FOUND</span>
+      Minimal phrase calculation results <span class="pink">NOT FOUND</span> <span class="green">FOUND</span><span class="red">IMPROPERLY FOUND</span>
     </div>
     <div class="col-lg-1 border">
-      Full phrase calculation Results <span class="pink">NOT FOUND</span> <span class="green">FOUND</span><span class="red">IMPROPERLY FOUND</span>
+      Extended phrase calculation results <span class="pink">NOT FOUND</span> <span class="green">FOUND</span><span class="red">IMPROPERLY FOUND</span>
     </div>
   </div>
   <div *ngFor="let result of results" class="row">
@@ -53,14 +53,14 @@
     </div>
 
     <div class="col-lg-2 border">
-      <!--      Original phrase-->
+      <!-- Comparing Original phrases-->
       {{result.originalPhrase}}
 
       <div class="row">
         <div class="col-sm-1 border">
           <span style="font-size: xx-small">details phrase:</span>
         </div>
-        <div *ngFor="let  word of result.product.detailsNameResults"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
+        <div *ngFor="let  word of result.initialNames.detailsNameResults"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
           <span style="font-size: x-small">{{word.word}}</span>
         </div>
 
@@ -69,7 +69,7 @@
         <div class="col-sm-1 border">
           <span style="font-size: xx-small">search phrase:</span>
         </div>
-        <div *ngFor="let  word of result.product.searchNameResults"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
+        <div *ngFor="let  word of result.initialNames.searchNameResults"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
           <span style="font-size: x-small">{{word.word}}</span>
         </div>
 
@@ -78,7 +78,7 @@
         <div class="col-sm-1 border">
           <span style="font-size: xx-small">ingredients phrase:</span>
         </div>
-        <div *ngFor="let  word of result.product.ingredientsNameResults"  class="col-sm-1 border">
+        <div *ngFor="let  word of result.initialNames.ingredientsNameResults"  class="col-sm-1 border">
           <span style="font-size: x-small">{{word.word}}</span>
         </div>
 
@@ -88,14 +88,18 @@
 
 
     <div class="col-lg-1 border">
-      <!--     entities and entitiless-->
+      <!--     brands and entities-->
       <div *ngIf="result.entities">
         <div *ngFor="let x of result.entities.split('<br>')">
-          {{x}}
+          Entity:{{x}}
         </div>
 
       </div>
-      {{result.entityLess}}
+      <div>Entityless: {{result.entityLess}}</div>
+
+      <div>Brand: {{result.brand}}</div>
+
+      <div>Brandless: {{result.brandless}}</div>
     </div>
     <div class="col-lg-1 border">
       <!--      final tokens-->
@@ -163,7 +167,7 @@
     </div>
 
     <div class="col-lg-1 border">
-      <!--      Calculation Results for bigger phrase-->
+      <!--      Minimal phrase calculation Results-->
       <div>Restrictive:
         <span *ngFor="let token of result.restrictivelyCalculatedResult.markedWords">
           [{{token}}]&nbsp;
@@ -201,7 +205,7 @@
       <div>Food Type: <b [className]="result.productTypeFound==result.expectedResult.foodTypeCategory ? 'green' : 'red'">{{result.productTypeFound}}({{result.expectedResult.foodTypeCategory}})</b></div>
   </div>
     <div class="col-lg-1 border">
-      <!--      Calculation Results for bigger phrase-->
+      <!--      Extended phrase calculation Results-->
       <div>Restrictive:
         <span *ngFor="let token of result.restrictivelyCalculatedResultForPhrase.markedWords">
           [{{token}}]&nbsp;

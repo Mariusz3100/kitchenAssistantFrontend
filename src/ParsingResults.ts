@@ -1,6 +1,6 @@
 import {Token} from './app/Token';
 import {WordDependency} from './app/WordDependency';
-import {Product} from './app/Product';
+import {ProductNamesComparison} from './app/ProductNamesComparison';
 
 
 
@@ -21,6 +21,9 @@ export class ParsingResults {
   adjacentyConotationsFound: string[][];
   entities: string;
   entityLess: string;
+
+  brand: string;
+  brandless: string;
 //  tokenString: string;
   tokens: Token[];
   correctedPhrase: string;
@@ -28,7 +31,8 @@ export class ParsingResults {
 
 
 
-  product: Product;
+  initialNames: ProductNamesComparison;
+  finalNames: ProductNamesComparison;
 
 }
 // {"text": "2", "lemma": "2", "tag": "CD"}
