@@ -24,6 +24,7 @@ export class ParsingResults {
 
   brand: string;
   brandless: string;
+  quantitylessPhrase: string;
 //  tokenString: string;
   tokens: Token[];
   correctedPhrase: string;

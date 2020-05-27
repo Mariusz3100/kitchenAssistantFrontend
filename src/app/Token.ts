@@ -7,5 +7,7 @@ export class Token {
   pos: string;
   head: string;
 
+  reasoning: string;
+
 }
 // {"text": "2", "lemma": "2", "tag": "CD"}

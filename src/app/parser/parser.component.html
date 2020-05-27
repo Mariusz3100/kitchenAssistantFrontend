@@ -11,9 +11,7 @@
     <div class="col-lg-1 border">
       tokens
     </div>
-    <div class="col-lg-1 border">
-      quantityless tokens
-    </div>
+
     <div class="col-lg-1 border">
       tag : pos : relationToParentType : head
     </div>
@@ -35,6 +33,9 @@
     </div>
     <div class="col-lg-1 border">
       Found dependencies
+    </div>
+    <div class="col-lg-1 border">
+      quantityless tokens
     </div>
     <div class="col-lg-1 border">
       Calculation Results <span class="pink">NOT FOUND</span> <span class="green">FOUND</span><span class="red">IMPROPERLY FOUND</span>
@@ -62,6 +63,8 @@
       {{result.entities}}
       <br>entityless:
       {{result.entityLess}}
+      <br>quantityless after initial categorisation:
+      {{result.quantitylessPhrase}}
     </div>
     <div class="col-lg-1 border">
       <!--        tokens-->
@@ -71,21 +74,7 @@
 
 
     </div>
-    <div class="col-lg-1 border">
-      <!--      quantityless tokens-->
-      <span *ngFor="let token of result.tokens">
-        <div *ngIf="token.wordType!='QuantityElement'">
-          <span class="{{token.wordType}}">
-            {{token.text}}
-          </span>
-          <span>
-            : {{token.lemma}}
-          </span>
-        </div>
-      </span>
 
-
-    </div>
     <div class="col-lg-1 border">
       <!--      tag : pos : relationToParentType : head-->
       <span *ngFor="let token of result.tokens">
@@ -159,6 +148,23 @@
       <div *ngFor="let connotation of result.dependencyConotationsFound">
         {{connotation.child.text}} ({{connotation.head.text}})
       </div>
+    </div>
+
+    <div class="col-lg-1 border">
+      <!--      quantityless tokens-->
+      <div *ngFor="let token of result.tokens">
+<!--        <div *ngIf="token.wordType!='QuantityElement'">-->
+          <span class="{{token.wordType}}">
+            {{token.text}}:
+          </span>
+          <span>
+            <span *ngIf="!token.reasoning">-</span>{{token.reasoning}}
+
+          </span>
+<!--        </div>-->
+      </div>
+
+
     </div>
     <div class="col-lg-1 border">
       <!-- Calculation Results -->
