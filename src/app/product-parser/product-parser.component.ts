@@ -9,8 +9,8 @@ import {ParsedPhraseService} from '../parsed-phrase.service';
   styleUrls: ['./product-parser.component.css']
 })
 export class ProductParserComponent implements OnInit {
-  paramKey = 'param';
-  private dataUrl = 'http://localhost:8080/tescoParseFromFile';
+  paramName = 'phrase';
+  private dataUrl = 'http://localhost:8080/tescoParse';
   results: ParsingResults[];
   phrase: string;
 
@@ -23,7 +23,12 @@ export class ProductParserComponent implements OnInit {
 
 
   ngOnInit() {
-    this.parsingProductService.getParsedPhrases(this.dataUrl)
+    const paramValue = this.route.snapshot.paramMap.get(this.paramName);
+    console.log('paramValue ' + paramValue);
+
+    const fullUrl = this.dataUrl + '?param=' + paramValue;
+    console.log(fullUrl);
+    this.parsingProductService.getParsedPhrases(fullUrl)
       .subscribe(results => {
 
         this.results = results;

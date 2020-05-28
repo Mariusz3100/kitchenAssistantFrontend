@@ -9,6 +9,7 @@ import { HttpModule } from '@angular/http';
 import { NerComponent } from './ner/ner.component';
 import { ParserComponent } from './parser/parser.component';
 import { ProductParserComponent } from './product-parser/product-parser.component';
+import {MatchParserComponent} from './MatchParser/match-parser.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ProductParserComponent } from './product-parser/product-parser.componen
     NerComponent,
     ParserComponent,
     ProductParserComponent,
+    MatchParserComponent,
   ],
   imports: [
     BrowserModule,

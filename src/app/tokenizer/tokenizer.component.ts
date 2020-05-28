@@ -9,7 +9,7 @@ import {TokenizerService} from '../tokenizer.service';
   styleUrls: ['./tokenizer.component.css']
 })
 export class TokenizerComponent implements OnInit {
-  paramKey = 'param';
+  param = 'param';
   tokens: Token[];
   phrase: string;
 
@@ -20,7 +20,7 @@ export class TokenizerComponent implements OnInit {
 
   ngOnInit() {
     // Note: Below 'queryParams' can be replaced with 'params' depending on your requirements
-      const paramValue = this.route.snapshot.paramMap.get(this.paramKey);
+      const paramValue = this.route.snapshot.paramMap.get(this.param);
       console.log('paramValue: ' + paramValue);
       this.phrase = paramValue;
       this.tokenizerService.parse(paramValue)
