@@ -41,7 +41,7 @@
       <!--      Original phrase-->
       {{result.originalPhrase}}
       <!--      Edaman results-->
-      <div class="expected">
+      <div *ngIf="result.expectedResult" class="expected">
         {{result.expectedResult.amount}}
         <br>
         {{result.expectedResult.amountType}}
@@ -169,12 +169,12 @@
     <div class="col-lg-1 border">
       <!--      Minimal phrase calculation Results-->
       <div>Restrictive:
-        <span *ngFor="let token of result.restrictivelyCalculatedResult.markedWords">
-          [{{token}}]&nbsp;
+        <span *ngFor="let token of result.restrictivelyCalculatedResult.markedWords" >
+          [<span class="gray">{{token}}</span>]&nbsp;
         </span>
       </div>
 
-      <div>
+      <div *ngIf="result.expectedResult" >
           <span *ngFor="let token of result.restrictivelyCalculatedResult.notFound" class="pink">
           {{token}}
         </span>
@@ -188,10 +188,10 @@
 
       <div>Permissive:
         <span *ngFor="let token of result.permisivelyCalculatedResult.markedWords">
-          [{{token}}]&nbsp;
+          [<span class="gray">{{token}}</span>]&nbsp;
         </span>
       </div>
-      <div>
+      <div *ngIf="result.expectedResult" >
           <span *ngFor="let token of result.permisivelyCalculatedResult.notFound" class="pink">
           {{token}}
         </span>
@@ -202,17 +202,27 @@
           {{token}}
         </span>
       </div>
-      <div>Food Type: <b [className]="result.productTypeFound==result.expectedResult.foodTypeCategory ? 'green' : 'red'">{{result.productTypeFound}}({{result.expectedResult.foodTypeCategory}})</b></div>
+      <div>Food Type:
+        <b *ngIf="result.expectedResult" [className]="result.productTypeFound==result.expectedResult.foodTypeCategory ? 'green' : 'red'">
+          {{result.productTypeFound}}({{result.expectedResult.foodTypeCategory}})
+        </b>
+
+        <b *ngIf="!result.expectedResult" class="gray">
+          {{result.productTypeFound}}
+        </b>
+
+
+      </div>
   </div>
     <div class="col-lg-1 border">
       <!--      Extended phrase calculation Results-->
       <div>Restrictive:
         <span *ngFor="let token of result.restrictivelyCalculatedResultForPhrase.markedWords">
-          [{{token}}]&nbsp;
+          [<span class="gray">{{token}}</span>]&nbsp;
         </span>
       </div>
 
-      <div>
+      <div  *ngIf="result.expectedResult">
           <span *ngFor="let token of result.restrictivelyCalculatedResultForPhrase.notFound" class="pink">
           {{token}}
         </span>
@@ -226,10 +236,10 @@
 
       <div>Permissive:
         <span *ngFor="let token of result.permisivelyCalculatedResultForPhrase.markedWords">
-          [{{token}}]&nbsp;
+          [<span class="gray">{{token}}</span>]&nbsp;
         </span>
       </div>
-      <div>
+      <div  *ngIf="result.expectedResult">
           <span *ngFor="let token of result.permisivelyCalculatedResultForPhrase.notFound" class="pink">
           {{token}}
         </span>
@@ -240,7 +250,17 @@
           {{token}}
         </span>
       </div>
-      <div>Food Type: <b [className]="result.productTypeFound==result.expectedResult.foodTypeCategory ? 'green' : 'red'">{{result.productTypeFound}}({{result.expectedResult.foodTypeCategory}})</b></div>
+      <div>Food Type:
+        <b *ngIf="result.expectedResult" [className]="result.productTypeFound==result.expectedResult.foodTypeCategory ? 'green' : 'red'">
+          {{result.productTypeFound}}({{result.expectedResult.foodTypeCategory}})
+        </b>
+
+        <b *ngIf="!result.expectedResult" class="gray">
+          {{result.productTypeFound}}
+        </b>
+
+
+      </div>
     </div>
 
   </div>

@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'ner/:param', component: NerComponent },
   { path: 'aiParse', component: ParserComponent },
   { path: 'aiProducts/:phrase', component:  ProductParserComponent},
+  { path: 'aiProducts', component:  ProductParserComponent},
   { path: 'aiMatcher', component:  MatchParserComponent},
 
 

@@ -26,7 +26,14 @@ export class ProductParserComponent implements OnInit {
     const paramValue = this.route.snapshot.paramMap.get(this.paramName);
     console.log('paramValue ' + paramValue);
 
-    const fullUrl = this.dataUrl + '?param=' + paramValue;
+    let fullUrl;
+    if (paramValue){
+      fullUrl = this.dataUrl + '?param=' + paramValue;
+    } else {
+      fullUrl = this.dataUrl;
+
+    }
+
     console.log(fullUrl);
     this.parsingProductService.getParsedPhrases(fullUrl)
       .subscribe(results => {
