@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {Token} from '../Token';
-import {ActivatedRoute} from '@angular/router';
-import {TokenizerService} from '../tokenizer.service';
-import {ParsedPhraseService} from '../parsed-phrase.service';
 import {ParsingResults} from '../../ParsingResults';
+import {ActivatedRoute} from '@angular/router';
+import {ParsedPhraseService} from '../parsed-phrase.service';
 
 @Component({
-  selector: 'app-parser',
-  templateUrl: './parser.component.html',
-  styleUrls: ['./parser.component.css']
+  selector: 'app-ingredient-parsed-list',
+  templateUrl: './ingredient-parsed-list.component.html',
+  styleUrls: ['./ingredient-parsed-list.component.css']
 })
-export class ParserComponent implements OnInit {
+export class IngredientParsedListComponent implements OnInit {
   paramKey = 'param';
   private baseUrl = 'http://localhost:8080/parseIngredients';
   results: ParsingResults[];

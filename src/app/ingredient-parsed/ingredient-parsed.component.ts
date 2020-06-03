@@ -1,0 +1,18 @@
+import {Component, Input, OnInit} from '@angular/core';
+import {ParsingResults} from '../../ParsingResults';
+
+@Component({
+  selector: '[app-ingredient-parsed]',
+  templateUrl: './ingredient-parsed.component.html',
+  styleUrls: ['./ingredient-parsed.component.css']
+})
+export class IngredientParsedComponent implements OnInit {
+
+  @Input() result: ParsingResults;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

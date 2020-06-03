@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ParserComponent } from './parser.component';
+import { IngredientParsedComponent } from './ingredient-parsed.component';
 
-describe('ParserComponent', () => {
-  let component: ParserComponent;
-  let fixture: ComponentFixture<ParserComponent>;
+describe('IngredientParsedComponent', () => {
+  let component: IngredientParsedComponent;
+  let fixture: ComponentFixture<IngredientParsedComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ParserComponent ]
+      declarations: [ IngredientParsedComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ParserComponent);
+    fixture = TestBed.createComponent(IngredientParsedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

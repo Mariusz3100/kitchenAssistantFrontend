@@ -1,0 +1,51 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-1 border">
+      Original phrase + Edaman results
+    </div>
+
+    <div class="col-lg-1 border">
+      entities
+    </div>
+    <div class="col-lg-1 border">
+      tokens
+    </div>
+
+    <div class="col-lg-1 border">
+      tag : pos : relationToParentType : head
+    </div>
+    <div class="col-lg-1 border">
+      corrected phrase
+    </div>
+
+    <div class="col-lg-1 border">
+      corrected tokens
+    </div>
+    <div class="col-lg-1 border">
+      Original tokens
+    </div>
+    <div class="col-lg-1 border">
+      original dependencies
+    </div>
+    <div class="col-lg-1 border">
+      dependencies from corrected
+    </div>
+    <div class="col-lg-1 border">
+      Found dependencies
+    </div>
+    <div class="col-lg-1 border">
+      quantityless tokens
+    </div>
+    <div class="col-lg-1 border">
+      Calculation Results <span class="pink">NOT FOUND</span> <span class="green">FOUND</span><span class="red">IMPROPERLY FOUND</span>
+    </div>
+  </div>
+
+
+  <div app-ingredient-parsed *ngFor="let result of results" [result]="result" class="row">
+
+  </div>
+
+
+</div>
