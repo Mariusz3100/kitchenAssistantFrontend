@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
-import {Token} from './Token';
+import {Token} from '../data-objects/Token';
 
 @Injectable({
   providedIn: 'root'

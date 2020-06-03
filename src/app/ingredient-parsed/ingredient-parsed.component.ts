@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ParsingResults} from '../../ParsingResults';
+import {ParsingResults} from '../data-objects/ParsingResults';
 
 @Component({
   selector: '[app-ingredient-parsed]',

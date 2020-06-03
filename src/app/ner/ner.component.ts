@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {NerService} from '../ner.service';
-import {NamedEntity} from '../NamedEntity';
+import {NerService} from '../services/ner.service';
+import {NamedEntity} from '../data-objects/NamedEntity';
 
 @Component({
   selector: 'app-ner',

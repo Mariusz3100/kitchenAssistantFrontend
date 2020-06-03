@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ParsingResults} from '../../ParsingResults';
+import {ParsingResults} from '../data-objects/ParsingResults';
 import {ActivatedRoute} from '@angular/router';
-import {ParsedPhraseService} from '../parsed-phrase.service';
+import {ParsedPhraseService} from '../services/parsed-phrase.service';
 
 @Component({
   selector: 'app-product-parsed-list',
@@ -27,7 +27,7 @@ export class ProductParsedListComponent implements OnInit {
     console.log('paramValue ' + paramValue);
 
     let fullUrl;
-    if (paramValue){
+    if (paramValue) {
       fullUrl = this.dataUrl + '?param=' + paramValue;
     } else {
       fullUrl = this.dataUrl;

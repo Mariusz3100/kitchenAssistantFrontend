@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Token} from '../Token';
+import {Token} from '../data-objects/Token';
 import {ActivatedRoute} from '@angular/router';
-import {TokenizerService} from '../tokenizer.service';
+import {TokenizerService} from '../services/tokenizer.service';
 
 @Component({
   selector: 'app-tokenizer',

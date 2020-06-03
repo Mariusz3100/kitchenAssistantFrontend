@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {TokenizerComponent} from './tokenizer/tokenizer.component';
 import {NerComponent} from './ner/ner.component';
-import {MatchParserComponent} from './MatchParser/match-parser.component';
+import {MatchParserComponent} from './match-parser/match-parser.component';
 import {IngredientParsedComponent} from './ingredient-parsed/ingredient-parsed.component';
 import {IngredientParsedListComponent} from './ingredient-parsed-list/ingredient-parsed-list.component';
 import {ProductParsedListComponent} from './product-parsed-list/product-parsed-list.component';

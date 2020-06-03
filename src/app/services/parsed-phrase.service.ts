@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs';
-import {NamedEntity} from './NamedEntity';
-import {ParsingResults} from '../ParsingResults';
+import {NamedEntity} from '../data-objects/NamedEntity';
+import {ParsingResults} from '../data-objects/ParsingResults';
 
 @Injectable({
   providedIn: 'root'

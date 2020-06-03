@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { NerComponent } from './ner/ner.component';
-import {MatchParserComponent} from './MatchParser/match-parser.component';
+import {MatchParserComponent} from './match-parser/match-parser.component';
 
 import { IngredientParsedListComponent } from './ingredient-parsed-list/ingredient-parsed-list.component';
 import { IngredientParsedComponent } from './ingredient-parsed/ingredient-parsed.component';

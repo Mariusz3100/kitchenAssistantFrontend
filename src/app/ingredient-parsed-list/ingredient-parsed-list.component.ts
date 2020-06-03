@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ParsingResults} from '../../ParsingResults';
+import {ParsingResults} from '../data-objects/ParsingResults';
 import {ActivatedRoute} from '@angular/router';
-import {ParsedPhraseService} from '../parsed-phrase.service';
+import {ParsedPhraseService} from '../services/parsed-phrase.service';
 
 @Component({
   selector: 'app-ingredient-parsed-list',

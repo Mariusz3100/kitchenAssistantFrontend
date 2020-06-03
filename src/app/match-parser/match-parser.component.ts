@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Token} from '../Token';
+import {Token} from '../data-objects/Token';
 import {ActivatedRoute} from '@angular/router';
-import {TokenizerService} from '../tokenizer.service';
-import {ParsedPhraseService} from '../parsed-phrase.service';
-import {ParsingResults} from '../../ParsingResults';
+import {TokenizerService} from '../services/tokenizer.service';
+import {ParsedPhraseService} from '../services/parsed-phrase.service';
+import {ParsingResults} from '../data-objects/ParsingResults';
 
 @Component({
   selector: 'app-parser',

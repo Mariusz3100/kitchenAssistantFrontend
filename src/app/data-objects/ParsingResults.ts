@@ -1,6 +1,6 @@
-import {Token} from './app/Token';
-import {WordDependency} from './app/WordDependency';
-import {ProductNamesComparison} from './app/ProductNamesComparison';
+import {Token} from './Token';
+import {WordDependency} from './WordDependency';
+import {ProductNamesComparison} from './ProductNamesComparison';
 
 
 
