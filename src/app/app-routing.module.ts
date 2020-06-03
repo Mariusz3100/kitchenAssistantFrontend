@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {TokenizerComponent} from './tokenizer/tokenizer.component';
 import {NerComponent} from './ner/ner.component';
-import {ProductParserComponent} from './product-parser/product-parser.component';
 import {MatchParserComponent} from './MatchParser/match-parser.component';
 import {IngredientParsedComponent} from './ingredient-parsed/ingredient-parsed.component';
 import {IngredientParsedListComponent} from './ingredient-parsed-list/ingredient-parsed-list.component';
+import {ProductParsedListComponent} from './product-parsed-list/product-parsed-list.component';
 
 
 const routes: Routes = [
   { path: 'tokenizer/:param', component: TokenizerComponent },
   { path: 'ner/:param', component: NerComponent },
   { path: 'aiParse', component: IngredientParsedListComponent },
-  { path: 'aiProducts/:phrase', component:  ProductParserComponent},
-  { path: 'aiProducts', component:  ProductParserComponent},
+  { path: 'aiProducts/:phrase', component:  ProductParsedListComponent},
+  { path: 'aiProducts', component:  ProductParsedListComponent},
   { path: 'aiMatcher', component:  MatchParserComponent},
 
 

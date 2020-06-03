@@ -1,0 +1,44 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-1 border">
+      expected nlp results
+    </div>
+    <div class="col-lg-2 border">
+      Comparing Original phrases
+    </div>
+    <div class="col-lg-1 border">
+      brands and entities
+    </div>
+
+    <div class="col-lg-1 border">
+      final tokens
+    </div>
+    <div class="col-lg-1 border">
+      quantityless tokens
+    </div>
+    <div class="col-lg-1 border">
+      tag : pos : relationToParentType : head
+    </div>
+    <div class="col-lg-1 border">
+      corrected phrase and tokens
+    </div>
+
+
+    <div class="col-lg-1 border">
+      Original tokens
+    </div>
+    <div class="col-lg-1 border">
+      Minimal phrase calculation results <span class="pink">NOT FOUND</span> <span class="green">FOUND</span><span class="red">IMPROPERLY FOUND</span>
+    </div>
+    <div class="col-lg-1 border">
+      Extended phrase calculation results <span class="pink">NOT FOUND</span> <span class="green">FOUND</span><span class="red">IMPROPERLY FOUND</span>
+    </div>
+  </div>
+
+  <div app-product-parsed *ngFor="let result of results" [result]="result" class="row">
+
+  </div>
+
+
+</div>

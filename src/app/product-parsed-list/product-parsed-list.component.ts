@@ -4,11 +4,13 @@ import {ActivatedRoute} from '@angular/router';
 import {ParsedPhraseService} from '../parsed-phrase.service';
 
 @Component({
-  selector: 'app-product-parser',
-  templateUrl: './product-parser.component.html',
-  styleUrls: ['./product-parser.component.css']
+  selector: 'app-product-parsed-list',
+  templateUrl: './product-parsed-list.component.html',
+  styleUrls: ['./product-parsed-list.component.css']
 })
-export class ProductParserComponent implements OnInit {
+export class ProductParsedListComponent implements OnInit {
+
+
   paramName = 'phrase';
   private dataUrl = 'http://localhost:8080/tescoParse';
   results: ParsingResults[];
@@ -18,8 +20,6 @@ export class ProductParserComponent implements OnInit {
     private route: ActivatedRoute,
     private parsingProductService: ParsedPhraseService
   ) { }
-
-
 
 
   ngOnInit() {
@@ -41,5 +41,4 @@ export class ProductParserComponent implements OnInit {
         this.results = results;
       } );
   }
-
 }

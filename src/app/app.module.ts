@@ -7,11 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { NerComponent } from './ner/ner.component';
-import { ProductParserComponent } from './product-parser/product-parser.component';
 import {MatchParserComponent} from './MatchParser/match-parser.component';
 
 import { IngredientParsedListComponent } from './ingredient-parsed-list/ingredient-parsed-list.component';
 import { IngredientParsedComponent } from './ingredient-parsed/ingredient-parsed.component';
+import { ProductParsedListComponent } from './product-parsed-list/product-parsed-list.component';
+import { ProductParsedComponent } from './product-parsed/product-parsed.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,11 @@ import { IngredientParsedComponent } from './ingredient-parsed/ingredient-parsed
     TokenizerComponent,
     NerComponent,
     IngredientParsedListComponent,
-    ProductParserComponent,
     MatchParserComponent,
     IngredientParsedListComponent,
     IngredientParsedComponent,
+    ProductParsedListComponent,
+    ProductParsedComponent,
   ],
   imports: [
     BrowserModule,
