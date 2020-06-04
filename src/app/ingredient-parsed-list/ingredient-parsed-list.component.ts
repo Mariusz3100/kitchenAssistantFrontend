@@ -22,9 +22,6 @@ export class IngredientParsedListComponent implements OnInit {
   ngOnInit() {
     this.parsingService.getParsedPhrases(this.baseUrl)
       .subscribe(results => {
-        console.log(results);
-        console.log(results.length);
-
         this.results = results;
       } );
   }

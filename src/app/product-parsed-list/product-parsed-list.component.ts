@@ -24,7 +24,6 @@ export class ProductParsedListComponent implements OnInit {
 
   ngOnInit() {
     const paramValue = this.route.snapshot.paramMap.get(this.paramName);
-    console.log('paramValue ' + paramValue);
 
     let fullUrl;
     if (paramValue) {
@@ -34,7 +33,6 @@ export class ProductParsedListComponent implements OnInit {
 
     }
 
-    console.log(fullUrl);
     this.parsingProductService.getParsedPhrases(fullUrl)
       .subscribe(results => {
 

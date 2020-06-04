@@ -21,11 +21,9 @@ export class NerComponent implements OnInit {
   ngOnInit() {
     // Note: Below 'queryParams' can be replaced with 'params' depending on your requirements
     const paramValue = this.route.snapshot.paramMap.get(this.paramKey);
-    console.log('paramValue: ' + paramValue);
     this.phrase = paramValue;
     this.nerService.parse(paramValue)
       .subscribe(entities => {
-        console.log(entities);
         this.entities = entities;
       } );
   }
