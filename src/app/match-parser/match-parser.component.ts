@@ -4,6 +4,8 @@ import {ActivatedRoute} from '@angular/router';
 import {TokenizerService} from '../services/tokenizer.service';
 import {ParsedPhraseService} from '../services/parsed-phrase.service';
 import {ParsingResults} from '../data-objects/ParsingResults';
+import {MatchingProcessResult} from '../data-objects/MatchingProcessResult';
+import {ParsedMatchServiceService} from '../services/parsed-match-service.service';
 
 @Component({
   selector: 'app-parser',
@@ -12,13 +14,13 @@ import {ParsingResults} from '../data-objects/ParsingResults';
 })
 export class MatchParserComponent implements OnInit {
   paramKey = 'param';
-  private baseUrl = 'http://localhost:8080/parseIngredients';
-  results: ParsingResults[];
+  private baseUrl = 'http://localhost:8080/findMatchesForIngredients';
+  results: MatchingProcessResult[];
   phrase: string;
 
   constructor(
     private route: ActivatedRoute,
-    private parsingService: ParsedPhraseService
+    private parsingService: ParsedMatchServiceService
   ) { }
 
   ngOnInit() {
