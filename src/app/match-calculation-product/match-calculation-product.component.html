@@ -1,0 +1,40 @@
+<div class="col-lg-2 border">
+  <!-- Comparing Original phrases-->
+  {{product.originalPhrase}}
+
+  <div class="row">
+    <div class="col-sm-1 border">
+      <span style="font-size: xx-small">details phrase:</span>
+    </div>
+    <div *ngFor="let  word of product.initialNames.detailsNameResults"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
+      <span style="font-size: x-small">{{word.word}}</span>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-sm-1 border">
+      <span style="font-size: xx-small">search phrase:</span>
+    </div>
+    <div *ngFor="let  word of product.initialNames.searchNameResults"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
+      <span style="font-size: x-small">{{word.word}}</span>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-sm-1 border">
+      <span style="font-size: xx-small">ingredients phrase:</span>
+    </div>
+    <div *ngFor="let  word of product.initialNames.ingredientsNameResults"  class="col-sm-1 border">
+      <span style="font-size: x-small">{{word.word}}</span>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="col-lg-1 border">
+  empty row
+</div>
+<div class="col-lg-1 border">
+  empty row
+</div>

@@ -14,6 +14,7 @@ export class MatchCalculationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.result.productsConsideredParsingResults);
   }
 
 }

@@ -14,6 +14,7 @@ import { ProductParsedListComponent } from './product-parsed-list/product-parsed
 import { ProductParsedComponent } from './product-parsed/product-parsed.component';
 import { MatchCalculationComponent } from './match-calculation/match-calculation.component';
 import { MatchCalculationListComponent } from './match-calculation-list/match-calculation-list.component';
+import { MatchCalculationProductComponent } from './match-calculation-product/match-calculation-product.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MatchCalculationListComponent } from './match-calculation-list/match-ca
     ProductParsedComponent,
     MatchCalculationComponent,
     MatchCalculationListComponent,
+    MatchCalculationProductComponent,
   ],
   imports: [
     BrowserModule,

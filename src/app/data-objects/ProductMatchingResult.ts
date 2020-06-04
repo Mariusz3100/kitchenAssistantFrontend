@@ -1,7 +1,9 @@
 import {ParsingResults} from './ParsingResults';
 
 
-export class ProductMatchingResult extends  ParsingResults{
+export class ProductMatchingResult {
+  baseResult: ParsingResults;
+
   verdict: boolean;
   wordsMatching: string;
 
