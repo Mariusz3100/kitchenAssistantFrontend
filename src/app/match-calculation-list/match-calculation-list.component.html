@@ -43,7 +43,5 @@
 
   </div>
 
-  <div app-ingredient-parsed *ngFor="let result of results" [result]="result.ingredientParsingDetails" class="row">
-
-  </div>
+  <div app-match-calculation *ngFor="let result of results" [result]="result"></div>
 </div>

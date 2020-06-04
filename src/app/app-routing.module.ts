@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {TokenizerComponent} from './tokenizer/tokenizer.component';
 import {NerComponent} from './ner/ner.component';
-import {MatchParserComponent} from './match-parser/match-parser.component';
-import {IngredientParsedComponent} from './ingredient-parsed/ingredient-parsed.component';
 import {IngredientParsedListComponent} from './ingredient-parsed-list/ingredient-parsed-list.component';
 import {ProductParsedListComponent} from './product-parsed-list/product-parsed-list.component';
+import {MatchCalculationListComponent} from './match-calculation-list/match-calculation-list.component';
 
 
 const routes: Routes = [
@@ -14,7 +13,7 @@ const routes: Routes = [
   { path: 'aiParse', component: IngredientParsedListComponent },
   { path: 'aiProducts/:phrase', component:  ProductParsedListComponent},
   { path: 'aiProducts', component:  ProductParsedListComponent},
-  { path: 'aiMatcher', component:  MatchParserComponent},
+  { path: 'aiMatcher', component:  MatchCalculationListComponent},
 
 
 
