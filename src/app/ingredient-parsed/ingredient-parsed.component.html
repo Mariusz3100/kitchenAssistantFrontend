@@ -14,7 +14,7 @@
   </div>
 
 
-  <div class="col-lg-1 border">
+  <div *ngIf="extended" class="col-lg-1 border">
     <!--      entities-->
     {{result.entities}}
     <br>entityless:
@@ -31,7 +31,7 @@
 
   </div>
 
-  <div class="col-lg-1 border">
+  <div *ngIf="extended" class="col-lg-1 border">
     <!--      tag : pos : relationToParentType : head-->
     <span *ngFor="let token of result.tokens">
         <div *ngIf="token.wordType!='QuantityElement'">
@@ -43,14 +43,14 @@
 
   </div>
 
-  <div class="col-lg-1 border">
+  <div *ngIf="extended" class="col-lg-1 border">
     <!--      corrected phrase-->
     {{result.correctedPhrase}}
 
 
   </div>
 
-  <div class="col-lg-1 border">
+  <div *ngIf="extended" class="col-lg-1 border">
     <!--      corrected tokens-->
     <span *ngFor="let token of result.correctedTokens">
         <div *ngIf="token.wordType!='QuantityElement'">
@@ -84,7 +84,7 @@
     </div>
 
   </div>
-  <div class="col-lg-1 border">
+  <div *ngIf="extended" class="col-lg-1 border">
     <!-- dependencies from corrected -->
     <div *ngFor="let connotation of result.correctedConnotations">
       {{connotation.child.text}} ({{connotation.head.text}})

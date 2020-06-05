@@ -9,7 +9,7 @@ import {ParsingResults} from '../data-objects/ParsingResults';
 export class IngredientParsedComponent implements OnInit {
 
   @Input() result: ParsingResults;
-
+  @Input() extended: boolean;
   constructor() { }
 
   ngOnInit() {
