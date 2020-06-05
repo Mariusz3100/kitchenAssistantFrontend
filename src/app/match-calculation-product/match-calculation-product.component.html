@@ -33,8 +33,112 @@
 </div>
 
 <div class="col-lg-1 border">
-  empty row
+  <!--      Original tokens-->
+  <div *ngFor="let token of product.tokens">
+
+        <span>
+          {{token.text}}
+        </span>
+    <span>
+          <span class="{{token.tag}}"> {{token.tag}}</span> : <span class="{{token.pos}}">{{token.pos}} </span> :  <span
+      class="{{token.relationToParentType}}">{{token.relationToParentType}} </span> : {{token.head}}
+        </span>
+  </div>
+</div>
+
+
+<div class="col-lg-1 border">
+  <!--      Minimal phrase calculation Results-->
+  <div>Restrictive:
+    <span *ngFor="let token of product.restrictivelyCalculatedResult.markedWords" >
+          [<span class="gray">{{token}}</span>]&nbsp;
+        </span>
+  </div>
+
+  <div *ngIf="product.expectedResult" >
+          <span *ngFor="let token of product.restrictivelyCalculatedResult.notFound" class="pink">
+          {{token}}
+        </span>
+    <span *ngFor="let token of product.restrictivelyCalculatedResult.found" class="green">
+          {{token}}
+        </span>
+    <span *ngFor="let token of product.restrictivelyCalculatedResult.improperlyFound" class="red">
+          {{token}}
+        </span>
+  </div>
+
+  <div>Permissive:
+    <span *ngFor="let token of product.permisivelyCalculatedResult.markedWords">
+          [<span class="gray">{{token}}</span>]&nbsp;
+        </span>
+  </div>
+  <div *ngIf="product.expectedResult" >
+          <span *ngFor="let token of product.permisivelyCalculatedResult.notFound" class="pink">
+          {{token}}
+        </span>
+    <span *ngFor="let token of product.permisivelyCalculatedResult.found" class="green">
+          {{token}}
+        </span>
+    <span *ngFor="let token of product.permisivelyCalculatedResult.improperlyFound" class="red">
+          {{token}}
+        </span>
+  </div>
+  <div>Food Type:
+    <b *ngIf="product.expectedResult" [className]="product.productTypeFound==product.expectedResult.foodTypeCategory ? 'green' : 'red'">
+      {{product.productTypeFound}}({{product.expectedResult.foodTypeCategory}})
+    </b>
+
+    <b *ngIf="!product.expectedResult" class="gray">
+      {{product.productTypeFound}}
+    </b>
+
+
+  </div>
 </div>
 <div class="col-lg-1 border">
-  empty row
-</div>
+  <!--      Extended phrase calculation Results-->
+  <div>Restrictive:
+    <span *ngFor="let token of product.restrictivelyCalculatedResultForPhrase.markedWords">
+          [<span class="gray">{{token}}</span>]&nbsp;
+        </span>
+  </div>
+
+  <div  *ngIf="product.expectedResult">
+          <span *ngFor="let token of product.restrictivelyCalculatedResultForPhrase.notFound" class="pink">
+          {{token}}
+        </span>
+    <span *ngFor="let token of product.restrictivelyCalculatedResultForPhrase.found" class="green">
+          {{token}}
+        </span>
+    <span *ngFor="let token of product.restrictivelyCalculatedResultForPhrase.improperlyFound" class="red">
+          {{token}}
+        </span>
+  </div>
+
+  <div>Permissive:
+    <span *ngFor="let token of product.permisivelyCalculatedResultForPhrase.markedWords">
+          [<span class="gray">{{token}}</span>]&nbsp;
+        </span>
+  </div>
+  <div  *ngIf="product.expectedResult">
+          <span *ngFor="let token of product.permisivelyCalculatedResultForPhrase.notFound" class="pink">
+          {{token}}
+        </span>
+    <span *ngFor="let token of product.permisivelyCalculatedResultForPhrase.found" class="green">
+          {{token}}
+        </span>
+    <span *ngFor="let token of product.permisivelyCalculatedResultForPhrase.improperlyFound" class="red">
+          {{token}}
+        </span>
+  </div>
+  <div>Food Type:
+    <b *ngIf="product.expectedResult" [className]="product.productTypeFound==product.expectedResult.foodTypeCategory ? 'green' : 'red'">
+      {{product.productTypeFound}}({{product.expectedResult.foodTypeCategory}})
+    </b>
+
+    <b *ngIf="!product.expectedResult" class="gray">
+      {{product.productTypeFound}}
+    </b>
+
+
+  </div>
