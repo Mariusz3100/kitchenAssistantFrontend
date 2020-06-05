@@ -2,10 +2,10 @@
 
 </div>
 <div class="row">
-  <div class="col-lg-4 border">
+  <div class="col-lg-7 border">
     <div class="container inner-container">
 
-      <div app-match-calculation-product *ngFor="let product of result.productsConsideredParsingResults"  [product]="product.baseResult" class="row">
+      <div app-match-calculation-product *ngFor="let product of result.productsConsideredParsingResults"  [productParsing]="product" class="row">
 
       </div>
     </div>

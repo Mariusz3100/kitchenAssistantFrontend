@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ParsingResults} from '../data-objects/ParsingResults';
+import {MatchingProcessResult} from '../data-objects/MatchingProcessResult';
+import {ProductMatchingResult} from '../data-objects/ProductMatchingResult';
 
 @Component({
   selector: '[app-match-calculation-product]',
@@ -7,12 +8,11 @@ import {ParsingResults} from '../data-objects/ParsingResults';
   styleUrls: ['./match-calculation-product.component.css']
 })
 export class MatchCalculationProductComponent implements OnInit {
-  @Input() product: ParsingResults;
+  @Input() productParsing: ProductMatchingResult;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.product);
   }
 
 }

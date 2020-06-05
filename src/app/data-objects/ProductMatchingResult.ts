@@ -5,7 +5,7 @@ export class ProductMatchingResult {
   baseResult: ParsingResults;
 
   verdict: boolean;
-  wordsMatching: string;
+  wordsMatching: CalculatedResults;
 
 
 }

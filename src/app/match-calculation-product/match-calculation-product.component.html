@@ -1,12 +1,13 @@
 <div class="col-lg-2 border">
   <!-- Comparing Original phrases-->
-  {{product.originalPhrase}}
+  {{productParsing.baseResult.originalPhrase}}
 
   <div class="row">
     <div class="col-sm-1 border">
       <span style="font-size: xx-small">details phrase:</span>
     </div>
-    <div *ngFor="let  word of product.initialNames.detailsNameResults"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
+    <div *ngFor="let  word of productParsing.baseResult.initialNames.detailsNameResults" class="col-sm-1 border"
+         [ngClass]="{'green':word.match, 'red':!word.match}">
       <span style="font-size: x-small">{{word.word}}</span>
     </div>
 
@@ -15,7 +16,8 @@
     <div class="col-sm-1 border">
       <span style="font-size: xx-small">search phrase:</span>
     </div>
-    <div *ngFor="let  word of product.initialNames.searchNameResults"  class="col-sm-1 border" [ngClass]="{'green':word.match, 'red':!word.match}">
+    <div *ngFor="let  word of productParsing.baseResult.initialNames.searchNameResults" class="col-sm-1 border"
+         [ngClass]="{'green':word.match, 'red':!word.match}">
       <span style="font-size: x-small">{{word.word}}</span>
     </div>
 
@@ -24,7 +26,7 @@
     <div class="col-sm-1 border">
       <span style="font-size: xx-small">ingredients phrase:</span>
     </div>
-    <div *ngFor="let  word of product.initialNames.ingredientsNameResults"  class="col-sm-1 border">
+    <div *ngFor="let  word of productParsing.baseResult.initialNames.ingredientsNameResults" class="col-sm-1 border">
       <span style="font-size: x-small">{{word.word}}</span>
     </div>
 
@@ -34,7 +36,7 @@
 
 <div class="col-lg-1 border">
   <!--      Original tokens-->
-  <div *ngFor="let token of product.tokens">
+  <div *ngFor="let token of productParsing.baseResult.tokens">
 
         <span>
           {{token.text}}
@@ -50,46 +52,47 @@
 <div class="col-lg-1 border">
   <!--      Minimal phrase calculation Results-->
   <div>Restrictive:
-    <span *ngFor="let token of product.restrictivelyCalculatedResult.markedWords" >
+    <span *ngFor="let token of productParsing.baseResult.restrictivelyCalculatedResult.markedWords">
           [<span class="gray">{{token}}</span>]&nbsp;
         </span>
   </div>
 
-  <div *ngIf="product.expectedResult" >
-          <span *ngFor="let token of product.restrictivelyCalculatedResult.notFound" class="pink">
+  <div *ngIf="productParsing.baseResult.expectedResult">
+          <span *ngFor="let token of productParsing.baseResult.restrictivelyCalculatedResult.notFound" class="pink">
           {{token}}
         </span>
-    <span *ngFor="let token of product.restrictivelyCalculatedResult.found" class="green">
+    <span *ngFor="let token of productParsing.baseResult.restrictivelyCalculatedResult.found" class="green">
           {{token}}
         </span>
-    <span *ngFor="let token of product.restrictivelyCalculatedResult.improperlyFound" class="red">
+    <span *ngFor="let token of productParsing.baseResult.restrictivelyCalculatedResult.improperlyFound" class="red">
           {{token}}
         </span>
   </div>
 
   <div>Permissive:
-    <span *ngFor="let token of product.permisivelyCalculatedResult.markedWords">
+    <span *ngFor="let token of productParsing.baseResult.permisivelyCalculatedResult.markedWords">
           [<span class="gray">{{token}}</span>]&nbsp;
         </span>
   </div>
-  <div *ngIf="product.expectedResult" >
-          <span *ngFor="let token of product.permisivelyCalculatedResult.notFound" class="pink">
+  <div *ngIf="productParsing.baseResult.expectedResult">
+          <span *ngFor="let token of productParsing.baseResult.permisivelyCalculatedResult.notFound" class="pink">
           {{token}}
         </span>
-    <span *ngFor="let token of product.permisivelyCalculatedResult.found" class="green">
+    <span *ngFor="let token of productParsing.baseResult.permisivelyCalculatedResult.found" class="green">
           {{token}}
         </span>
-    <span *ngFor="let token of product.permisivelyCalculatedResult.improperlyFound" class="red">
+    <span *ngFor="let token of productParsing.baseResult.permisivelyCalculatedResult.improperlyFound" class="red">
           {{token}}
         </span>
   </div>
   <div>Food Type:
-    <b *ngIf="product.expectedResult" [className]="product.productTypeFound==product.expectedResult.foodTypeCategory ? 'green' : 'red'">
-      {{product.productTypeFound}}({{product.expectedResult.foodTypeCategory}})
+    <b *ngIf="productParsing.baseResult.expectedResult"
+       [className]="productParsing.baseResult.productTypeFound==productParsing.baseResult.expectedResult.foodTypeCategory ? 'green' : 'red'">
+      {{productParsing.baseResult.productTypeFound}}({{productParsing.baseResult.expectedResult.foodTypeCategory}})
     </b>
 
-    <b *ngIf="!product.expectedResult" class="gray">
-      {{product.productTypeFound}}
+    <b *ngIf="!productParsing.baseResult.expectedResult" class="gray">
+      {{productParsing.baseResult.productTypeFound}}
     </b>
 
 
@@ -98,47 +101,78 @@
 <div class="col-lg-1 border">
   <!--      Extended phrase calculation Results-->
   <div>Restrictive:
-    <span *ngFor="let token of product.restrictivelyCalculatedResultForPhrase.markedWords">
+    <span *ngFor="let token of productParsing.baseResult.restrictivelyCalculatedResultForPhrase.markedWords">
           [<span class="gray">{{token}}</span>]&nbsp;
         </span>
   </div>
 
-  <div  *ngIf="product.expectedResult">
-          <span *ngFor="let token of product.restrictivelyCalculatedResultForPhrase.notFound" class="pink">
+  <div *ngIf="productParsing.baseResult.expectedResult">
+          <span *ngFor="let token of productParsing.baseResult.restrictivelyCalculatedResultForPhrase.notFound"
+                class="pink">
           {{token}}
         </span>
-    <span *ngFor="let token of product.restrictivelyCalculatedResultForPhrase.found" class="green">
+    <span *ngFor="let token of productParsing.baseResult.restrictivelyCalculatedResultForPhrase.found" class="green">
           {{token}}
         </span>
-    <span *ngFor="let token of product.restrictivelyCalculatedResultForPhrase.improperlyFound" class="red">
+    <span *ngFor="let token of productParsing.baseResult.restrictivelyCalculatedResultForPhrase.improperlyFound"
+          class="red">
           {{token}}
         </span>
   </div>
 
   <div>Permissive:
-    <span *ngFor="let token of product.permisivelyCalculatedResultForPhrase.markedWords">
+    <span *ngFor="let token of productParsing.baseResult.permisivelyCalculatedResultForPhrase.markedWords">
           [<span class="gray">{{token}}</span>]&nbsp;
         </span>
   </div>
-  <div  *ngIf="product.expectedResult">
-          <span *ngFor="let token of product.permisivelyCalculatedResultForPhrase.notFound" class="pink">
+  <div *ngIf="productParsing.baseResult.expectedResult">
+          <span *ngFor="let token of productParsing.baseResult.permisivelyCalculatedResultForPhrase.notFound"
+                class="pink">
           {{token}}
         </span>
-    <span *ngFor="let token of product.permisivelyCalculatedResultForPhrase.found" class="green">
+    <span *ngFor="let token of productParsing.baseResult.permisivelyCalculatedResultForPhrase.found" class="green">
           {{token}}
         </span>
-    <span *ngFor="let token of product.permisivelyCalculatedResultForPhrase.improperlyFound" class="red">
+    <span *ngFor="let token of productParsing.baseResult.permisivelyCalculatedResultForPhrase.improperlyFound"
+          class="red">
           {{token}}
         </span>
   </div>
   <div>Food Type:
-    <b *ngIf="product.expectedResult" [className]="product.productTypeFound==product.expectedResult.foodTypeCategory ? 'green' : 'red'">
-      {{product.productTypeFound}}({{product.expectedResult.foodTypeCategory}})
+    <b *ngIf="productParsing.baseResult.expectedResult"
+       [className]="productParsing.baseResult.productTypeFound==productParsing.baseResult.expectedResult.foodTypeCategory ? 'green' : 'red'">
+      {{productParsing.baseResult.productTypeFound}}({{productParsing.baseResult.expectedResult.foodTypeCategory}})
     </b>
 
-    <b *ngIf="!product.expectedResult" class="gray">
-      {{product.productTypeFound}}
+    <b *ngIf="!productParsing.baseResult.expectedResult" class="gray">
+      {{productParsing.baseResult.productTypeFound}}
     </b>
 
 
   </div>
+
+
+</div>
+<div class="col-lg-1 border">
+  <div>Matching result:
+    <span *ngFor="let token of productParsing.wordsMatching.markedWords">
+          [<span class="gray">{{token}}</span>]&nbsp;
+        </span>
+  </div>
+  <div>
+    <span *ngFor="let token of productParsing.wordsMatching.notFound" class="pink">
+          {{token}}
+        </span>
+    <span *ngFor="let token of productParsing.wordsMatching.found" class="green">
+          {{token}}
+        </span>
+    <span *ngFor="let token of productParsing.wordsMatching.improperlyFound" class="red">
+          {{token}}
+    </span>
+
+  </div>
+
+
+  <span
+    [ngClass]="{'green':productParsing.verdict, 'red':!productParsing.verdict}">Verdict:{{productParsing.verdict}}</span>
+</div>
