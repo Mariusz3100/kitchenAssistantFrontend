@@ -154,6 +154,7 @@
 
 </div>
 <div class="col-lg-1 border">
+  <div class="match-results">
   <div>Matching result:
     <span *ngFor="let token of productParsing.wordsMatching.markedWords">
           [<span class="gray">{{token}}</span>]&nbsp;
@@ -171,8 +172,8 @@
     </span>
 
   </div>
+  </div>
 
-
-  <span
-    [ngClass]="{'green':productParsing.verdict, 'red':!productParsing.verdict}">Verdict:{{productParsing.verdict}}</span>
+  <div
+    [ngClass]="{'verdict-true':productParsing.verdict, 'verdict-false':!productParsing.verdict}">Verdict:{{productParsing.verdict}}</div>
 </div>
