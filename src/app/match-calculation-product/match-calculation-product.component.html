@@ -47,7 +47,22 @@
         </span>
   </div>
 </div>
+<div class="col-lg-1 border">
+  <!-- quantityless tokens with reasoning behind them-->
 
+
+  <div *ngFor="let token of productParsing.baseResult.tokens">
+    <!--        <div *ngIf="token.wordType!='QuantityElement'">-->
+    <span class="{{token.wordType}}">
+            {{token.text}}:
+          </span>
+    <span>
+            <span *ngIf="!token.reasoning">-</span>{{token.reasoning}}
+
+          </span>
+    <!--        </div>-->
+  </div>
+</div>
 
 <div class="col-lg-1 border">
   <!--      Minimal phrase calculation Results-->
