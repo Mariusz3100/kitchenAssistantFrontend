@@ -7,6 +7,8 @@ import {ProductNamesComparison} from './ProductNamesComparison';
 export class ParsingResults {
   originalPhrase: string;
   productTypeFound: string;
+  productTypeReasoning: [][];
+
   expectedResult: ExpectedResult;
   restrictivelyCalculatedResult: CalculatedResults;
   permisivelyCalculatedResult: CalculatedResults;

@@ -130,6 +130,15 @@
     <!--        </div>-->
   </div>
 </div>
+
+<div class="col-lg-1 border">
+  <!-- type reasonings -->
+  <div *ngFor="let entry of result.productTypeReasoning">
+    {{entry[0]}} ({{entry[1]}})
+  </div>
+
+</div>
+
 <div class="col-lg-1 border">
   <!--      Minimal phrase calculation Results-->
   <div>Restrictive:

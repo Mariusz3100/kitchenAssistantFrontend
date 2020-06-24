@@ -84,13 +84,7 @@
     </div>
 
   </div>
-  <div *ngIf="extended" class="col-lg-1 border">
-    <!-- dependencies from corrected -->
-    <div *ngFor="let connotation of result.correctedConnotations">
-      {{connotation.child.text}} ({{connotation.head.text}})
-    </div>
 
-  </div>
 
   <div class="col-lg-1 border">
     <b>From adjacency:</b>
@@ -120,6 +114,14 @@
       <!--        </div>-->
     </div>
 
+
+  </div>
+
+  <div *ngIf="extended" class="col-lg-1 border">
+    <!-- type reasonings -->
+    <div *ngFor="let entry of result.productTypeReasoning">
+      {{entry[0]}} ({{entry[1]}})
+    </div>
 
   </div>
   <div class="col-lg-1 border">
