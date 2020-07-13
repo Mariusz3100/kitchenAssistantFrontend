@@ -156,18 +156,39 @@
   height: 80%;
 }
 
-.verdict-true{
+/*.verdict-true{*/
+/*  margin: 20px;*/
+/*  border: 5px solid #004000;*/
+/*}*/
+
+/*.verdict-false{*/
+/*  margin: 20px;*/
+/*  border: 5px solid crimson;*/
+/*}*/
+
+.verdict-true-positive{
   margin: 20px;
-  border: 5px solid #004000;
+  border: 5px solid #02f002;
 }
 
-.verdict-false{
+.verdict-true-negative{
   margin: 20px;
-  border: 5px solid crimson;
+  border: 5px solid red;
 }
+
+.verdict-false-positive{
+  margin: 20px;
+  border: 5px dashed red;
+}
+
+.verdict-false-negative{
+  margin: 20px;
+  border: 5px dashed #02f002;
+}
+
 
 .match-results{
-  height: 65%;
+  height: 50%;
 }
 
 .green{

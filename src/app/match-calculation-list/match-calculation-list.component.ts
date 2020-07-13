@@ -10,7 +10,7 @@ import {ParsedMatchServiceService} from '../services/parsed-match-service.servic
 })
 export class MatchCalculationListComponent implements OnInit {
   paramKey = 'param';
-  private baseUrl = 'http://localhost:8080/findMatchesForIngredients';
+  private baseUrl = 'http://localhost:8080/checkMatchesFound';
   results: MatchingProcessResult[];
   phrase: string;
 

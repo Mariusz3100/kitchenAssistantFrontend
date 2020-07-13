@@ -4,7 +4,10 @@ import {ParsingResults} from './ParsingResults';
 export class ProductMatchingResult {
   baseResult: ParsingResults;
 
-  verdict: boolean;
+  calculatedVerdict: boolean;
+  expectedVerdict: boolean;
+
+
   wordsMatching: CalculatedResults;
 
 

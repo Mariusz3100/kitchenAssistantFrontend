@@ -168,6 +168,43 @@
 
 
 </div>
+
+<div class="col-lg-2 border">
+  <!-- Comparing Original phrases-->
+  {{productParsing.baseResult.originalPhrase}}
+
+  <div class="row">
+    <div class="col-sm-1 border">
+      <span style="font-size: xx-small">details phrase:</span>
+    </div>
+    <div *ngFor="let  word of productParsing.baseResult.initialNames.detailsNameResults" class="col-sm-1 border"
+         [ngClass]="{'green':word.match, 'red':!word.match}">
+      <span style="font-size: x-small">{{word.word}}</span>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-sm-1 border">
+      <span style="font-size: xx-small">search phrase:</span>
+    </div>
+    <div *ngFor="let  word of productParsing.baseResult.initialNames.searchNameResults" class="col-sm-1 border"
+         [ngClass]="{'green':word.match, 'red':!word.match}">
+      <span style="font-size: x-small">{{word.word}}</span>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-sm-1 border">
+      <span style="font-size: xx-small">ingredients phrase:</span>
+    </div>
+    <div *ngFor="let  word of productParsing.baseResult.initialNames.ingredientsNameResults" class="col-sm-1 border">
+      <span style="font-size: x-small">{{word.word}}</span>
+    </div>
+
+  </div>
+
+</div>
+
 <div class="col-lg-1 border">
   <div class="match-results">
   <div>Matching result:
@@ -190,5 +227,12 @@
   </div>
 
   <div
-    [ngClass]="{'verdict-true':productParsing.verdict, 'verdict-false':!productParsing.verdict}">Verdict:{{productParsing.verdict}}</div>
+    [ngClass]="{'verdict-true-positive':productParsing.calculatedVerdict&&productParsing.expectedVerdict,
+              'verdict-true-negative':!productParsing.calculatedVerdict&&!productParsing.expectedVerdict,
+              'verdict-false-positive':productParsing.calculatedVerdict&&!productParsing.expectedVerdict,
+              'verdict-false-negative':!productParsing.calculatedVerdict&&productParsing.expectedVerdict}">
+   <div> Verdict calculated:{{productParsing.calculatedVerdict}}</div>
+   <div> Verdict expected:{{productParsing.expectedVerdict}}</div>
+
+  </div>
 </div>
