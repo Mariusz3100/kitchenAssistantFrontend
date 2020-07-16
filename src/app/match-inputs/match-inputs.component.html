@@ -1,0 +1,21 @@
+<h3>Ingredients</h3>
+<ul>
+  <li *ngFor="let ingredient of results.ingredientLines">
+    {{ingredient}}
+
+  </li>
+</ul>
+<h3>Products</h3>
+<ul>
+  <li *ngFor="let product of results.productNames">
+    {{product}}
+
+  </li>
+</ul>
+<h3>Matches</h3>
+<ul>
+  <li *ngFor="let match of results.matchesExpected">
+    {{match.ingredient}} <-> {{match.product}}
+
+  </li>
+</ul>
