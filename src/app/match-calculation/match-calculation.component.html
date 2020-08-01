@@ -8,6 +8,11 @@
       <div app-match-calculation-product *ngFor="let product of result.productsConsideredParsingResults"  [productParsing]="product" class="row">
 
       </div>
+      <div class="verdict-true-negative">
+        <div app-match-calculation-product *ngFor="let product of result.incorrectProductsConsideredParsingResults"  [productParsing]="product" class="row">
+
+        </div>
+      </div>
     </div>
 
   </div>
