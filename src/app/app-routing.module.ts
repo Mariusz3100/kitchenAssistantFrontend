@@ -6,6 +6,7 @@ import {IngredientParsedListComponent} from './ingredient-parsed-list/ingredient
 import {ProductParsedListComponent} from './product-parsed-list/product-parsed-list.component';
 import {MatchCalculationListComponent} from './match-calculation-list/match-calculation-list.component';
 import {MatchInputsComponent} from './match-inputs/match-inputs.component';
+import {StatDataComponent} from './stat-data/stat-data.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'aiProducts', component:  ProductParsedListComponent},
   { path: 'aiMatcher', component:  MatchCalculationListComponent},
   { path: 'inputs', component:  MatchInputsComponent},
+  { path: 'stats', component:  StatDataComponent},
 
 
 

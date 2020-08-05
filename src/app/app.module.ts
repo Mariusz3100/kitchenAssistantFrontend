@@ -16,6 +16,7 @@ import { MatchCalculationComponent } from './match-calculation/match-calculation
 import { MatchCalculationListComponent } from './match-calculation-list/match-calculation-list.component';
 import { MatchCalculationProductComponent } from './match-calculation-product/match-calculation-product.component';
 import { MatchInputsComponent } from './match-inputs/match-inputs.component';
+import { StatDataComponent } from './stat-data/stat-data.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MatchInputsComponent } from './match-inputs/match-inputs.component';
     MatchCalculationListComponent,
     MatchCalculationProductComponent,
     MatchInputsComponent,
+    StatDataComponent,
   ],
   imports: [
     BrowserModule,
