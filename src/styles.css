@@ -14,9 +14,12 @@
 .white{
   background-color:white;
 }
-.container{
-   max-width: 6000px;
-   min-width: 6000px
+
+
+
+.extended-container{
+  max-width: 6000px;
+  min-width: 6000px
 }
 
 .standard-container{
