@@ -1,6 +1,7 @@
 import {Token} from './Token';
 import {WordDependency} from './WordDependency';
 import {ProductNamesComparison} from './ProductNamesComparison';
+import {PhraseConsidered} from './PhraseConsidered';
 
 
 
@@ -8,6 +9,7 @@ export class ParsingResults {
   originalPhrase: string;
   productTypeFound: string;
   productTypeReasoning: [][];
+  phrasesConsidered: PhraseConsidered[];
 
   expectedResult: ExpectedResult;
   restrictivelyCalculatedResult: CalculatedResults;

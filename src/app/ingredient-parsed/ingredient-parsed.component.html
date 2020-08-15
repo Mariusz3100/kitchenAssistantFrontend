@@ -32,14 +32,13 @@
   </div>
 
   <div *ngIf="extended" class="col-lg-1 border">
-    <!--      tag : pos : relationToParentType : head-->
-    <span *ngFor="let token of result.tokens">
-        <div *ngIf="token.wordType!='QuantityElement'">
-           {{token.tag}} : {{token.pos}} : {{token.relationToParentType}} : {{token.head}}
 
-        </div>
-      </span>
+    <div class="row" *ngFor="let result of result.phrasesConsidered">
 
+      <div *ngIf="result.phrase!=undefined" >{{result.phrase}}</div>
+
+      <div *ngIf="result.head!=undefined || result.child!=undefined">{{result.head.text}}->{{result.child.text}}</div>
+    </div>
 
   </div>
 
