@@ -1,0 +1,10 @@
+  <div *ngIf="phrase.productFound.head!=undefined || phrase.productFound.child!=undefined" class="col-lg-1" style="border: 2px solid #000ab5;">{{phrase.productFound.head.text}}</div>
+  <div *ngIf="phrase.productFound.head!=undefined || phrase.productFound.child!=undefined" class="col-lg-1 border" style="border: 1px solid #000ab5;">{{phrase.productFound.child.text}}</div>
+
+
+  <div *ngIf="phrase.match.head!=undefined || phrase.match.child!=undefined" class="col-lg-1" style="border: 2px solid #004000;">{{phrase.match.head.text}}</div>
+  <div *ngIf="phrase.match.head!=undefined || phrase.match.child!=undefined" class="col-lg-1 border" style="border: 1px solid #004000;">{{phrase.match.child.text}}</div>
+
+
+  <div *ngIf="phrase.ingredientFound.head!=undefined || phrase.ingredientFound.child!=undefined" class="col-lg-1" style="border: 2px solid #920077;">{{phrase.ingredientFound.head.text}}</div>
+  <div *ngIf="phrase.ingredientFound.head!=undefined || phrase.ingredientFound.child!=undefined" class="col-lg-1 border" style="border: 1px solid #920077;">{{phrase.ingredientFound.child.text}}</div>

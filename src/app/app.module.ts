@@ -18,6 +18,7 @@ import { MatchCalculationProductComponent } from './match-calculation-product/ma
 import { MatchInputsComponent } from './match-inputs/match-inputs.component';
 import { StatDataComponent } from './stat-data/stat-data.component';
 import { PhraseConsideringComponent } from './phrase-considering/phrase-considering.component';
+import { PhrasesMatchComponent } from './phrases-match/phrases-match.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PhraseConsideringComponent } from './phrase-considering/phrase-consider
     MatchInputsComponent,
     StatDataComponent,
     PhraseConsideringComponent,
+    PhrasesMatchComponent,
   ],
   imports: [
     BrowserModule,

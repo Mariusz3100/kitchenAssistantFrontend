@@ -48,24 +48,15 @@
     </div>
   </div>
   <div class="row" *ngFor="let result of data.matchedPhrases">
-    <div *ngIf="result.productFound.phrase!=undefined" class="col-lg-4"  style="border: 1px solid #000ab5;">{{result.productFound.phrase}}</div>
-    <div *ngIf="result.match.phrase!=undefined" class="col-lg-4 "  style="border: 1px solid #004000;">{{result.match.phrase}}</div>
-    <div *ngIf="result.ingredientFound.phrase!=undefined" class="col-lg-4"  style="border: 1px solid #920077;">{{result.ingredientFound.phrase}}</div>
+    <div *ngIf="result.productFound.phrase!=undefined" class="col-lg-2"  style="border: 1px solid #000ab5;">{{result.productFound.phrase}}</div>
+    <div *ngIf="result.match.phrase!=undefined" class="col-lg-2"  style="border: 1px solid #004000;">{{result.match.phrase}}</div>
+    <div *ngIf="result.ingredientFound.phrase!=undefined" class="col-lg-2"  style="border: 1px solid #920077;">{{result.ingredientFound.phrase}}</div>
 
 
   </div>
-  <div class="row" *ngFor="let result of data.matchedPhrases">
-    <div *ngIf="result.productFound.head!=undefined || result.productFound.child!=undefined" class="col-lg-2" style="border: 2px solid #000ab5;">{{result.productFound.head.text}}</div>
-    <div *ngIf="result.productFound.head!=undefined || result.productFound.child!=undefined" class="col-lg-2 border"  style="border: 1px solid #000ab5;">{{result.productFound.child.text}}</div>
 
+  <div app-phrases-match class="row"  *ngFor="let result of data.matchedPhrases" [phrase]="result"></div>
 
-    <div *ngIf="result.match.head!=undefined || result.match.child!=undefined" class="col-lg-2" style="border: 2px solid #004000;">{{result.match.head.text}}</div>
-    <div *ngIf="result.match.head!=undefined || result.match.child!=undefined" class="col-lg-2 border"  style="border: 1px solid #004000;">{{result.match.child.text}}</div>
-
-
-    <div *ngIf="result.ingredientFound.head!=undefined || result.ingredientFound.child!=undefined" class="col-lg-2" style="border: 2px solid #920077;">{{result.ingredientFound.head.text}}</div>
-    <div *ngIf="result.ingredientFound.head!=undefined || result.ingredientFound.child!=undefined" class="col-lg-2 border"  style="border: 1px solid #920077;">{{result.ingredientFound.child.text}}</div>
-  </div>
 
 
 
