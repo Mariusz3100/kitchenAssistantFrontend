@@ -12,12 +12,12 @@
     <div class="col-sm-1 border">
       ({{result.productCount}})
     </div>
-    <div class="col-sm-2 border" [ngClass]="{'green':result.calculatedType=='BaseProductElement'}">
+    <div class="col-sm-2 border" [ngClass]="result.calculatedType">
       {{result.calculatedType}}
     </div>
     <div class="col-sm-2 border">
       <span  *ngFor="let associated of result.wordsAssociated" >
-        <span [ngClass]="{'green':associated.calculatedType=='BaseProductElement'}">{{associated.text}}</span>({{associated.count}})<br>
+        <span [ngClass]="associated.calculatedType">{{associated.text}}</span>({{associated.count}})<br>
       </span>
     </div>
     <div class="col-sm-2 border">
@@ -28,23 +28,6 @@
     </div>
   </div>
 
-<!--  <div class="col-sm">-->
-<!--    <h4>Ingredient occurences</h4>-->
-<!--  </div>-->
-<!--    <div class="row" *ngFor="let result of data.ingredientResults">-->
-<!--      <div class="col-sm border">-->
-<!--      {{result.text}}-->
-<!--      </div>-->
-<!--      <div class="col-sm border">-->
-<!--        ({{result.lemma}})-->
-<!--      </div>-->
-<!--      <div class="col-sm border">-->
-<!--        ({{result.ingredientCount}})-->
-<!--      </div>-->
-<!--      <div class="col-sm-2 border" [ngClass]="{'green':result.calculatedType=='BaseProductElement'}">-->
-<!--        {{result.calculatedType}}-->
-<!--      </div>-->
-<!--    </div>-->
 
 
 </div>

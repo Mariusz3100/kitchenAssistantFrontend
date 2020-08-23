@@ -2,9 +2,10 @@ import {SavedToken} from './SavedToken';
 import {PhraseConsidered} from './PhraseConsidered';
 
 export class PhraseConsideredMatch {
-  ingredientFound: PhraseConsidered;
+  ingredientPhraseMatched: PhraseConsidered[];
   match: PhraseConsidered;
-  productFound: PhraseConsidered;
-
+  productPhraseMatched: PhraseConsidered[];
+  wordAssociacions: WordAssociacion[];
+  relatedUsdaPhrases: string[];
 }
 

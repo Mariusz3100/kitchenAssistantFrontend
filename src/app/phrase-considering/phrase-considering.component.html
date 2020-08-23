@@ -47,23 +47,16 @@
       <h4>matched phrases</h4>
     </div>
   </div>
-  <div class="row" *ngFor="let result of data.matchedPhrases">
-    <div *ngIf="result.productFound.phrase!=undefined" class="col-lg-2"  style="border: 1px solid #000ab5;">{{result.productFound.phrase}}</div>
-    <div *ngIf="result.match.phrase!=undefined" class="col-lg-2"  style="border: 1px solid #004000;">{{result.match.phrase}}</div>
-    <div *ngIf="result.ingredientFound.phrase!=undefined" class="col-lg-2"  style="border: 1px solid #920077;">{{result.ingredientFound.phrase}}</div>
-
-
-  </div>
+</div>
+<div class="container semi-extended-container">
 
   <div app-phrases-match class="row"  *ngFor="let result of data.matchedPhrases" [phrase]="result"></div>
 
 
 
-
-
-
-
-
-
-
+</div>
+<div class="col-lg-2" style="border: 5px solid #427300;">
+  <ul>
+    <li *ngFor="let usdaPhrase of data.phrasesFromUsdaNotMatched">{{usdaPhrase}}</li>
+  </ul>
 </div>

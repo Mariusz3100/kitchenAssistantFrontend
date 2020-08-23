@@ -7,6 +7,7 @@ export class PhraseFindingResults {
   extraProductPhrases: PhraseConsidered[];
   extraIngredientPhrases: PhraseConsidered[];
   matchedPhrases: PhraseConsideredMatch[];
+  phrasesFromUsdaNotMatched: string[];
 
 
 }

@@ -15,11 +15,29 @@
   background-color:white;
 }
 
+.BaseProductElement{
+  background-color: green;
+
+}
+
+.Vegetable{
+  background-color: #02f002;
+
+}
 
 
+.Fruit{
+  background-color: coral;
+
+}
 .extended-container{
   max-width: 6000px;
   min-width: 6000px
+}
+
+.semi-extended-container{
+  max-width: 2000px;
+  min-width: 2000px
 }
 
 .standard-container{
