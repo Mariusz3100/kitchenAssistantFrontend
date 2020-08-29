@@ -12,6 +12,11 @@
         <div app-match-calculation-product *ngFor="let product of result.incorrectProductsConsideredParsingResults"  [productParsing]="product" class="row">
 
         </div>
+        <h6 *ngIf="result.productNamesNotFound!=undefined && result.productNamesNotFound.length>0">Other not found:</h6>
+        <ul>
+          <li *ngFor="let miss of result.productNamesNotFound">{{miss}}</li>
+        </ul>
+
       </div>
     </div>
 

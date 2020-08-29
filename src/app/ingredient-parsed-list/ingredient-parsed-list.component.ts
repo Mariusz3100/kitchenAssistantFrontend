@@ -9,8 +9,9 @@ import {ParsedPhraseService} from '../services/parsed-phrase.service';
   styleUrls: ['./ingredient-parsed-list.component.css']
 })
 export class IngredientParsedListComponent implements OnInit {
-  paramKey = 'param';
+  paramKey = 'refined';
   private baseUrl = 'http://localhost:8080/parseIngredients';
+  private refinedUrl = 'http://localhost:8080/ingredientRefinedParsing';
   results: ParsingResults[];
   phrase: string;
 
@@ -20,7 +21,17 @@ export class IngredientParsedListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.parsingService.getParsedPhrases(this.baseUrl)
+    const paramValue = this.route.snapshot.paramMap.get(this.paramKey);
+    let fullUrl;
+    if (paramValue) {
+      fullUrl = this.refinedUrl;
+    } else {
+      fullUrl = this.baseUrl;
+
+    }
+
+
+    this.parsingService.getParsedPhrases(fullUrl)
       .subscribe(results => {
         this.results = results;
       } );

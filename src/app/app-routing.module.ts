@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'tokenizer/:param', component: TokenizerComponent },
   { path: 'ner/:param', component: NerComponent },
   { path: 'aiParse', component: IngredientParsedListComponent },
+  { path: 'aiParse/:refined', component: IngredientParsedListComponent },
   { path: 'aiProducts/:phrase', component:  ProductParsedListComponent},
   { path: 'aiProducts', component:  ProductParsedListComponent},
   { path: 'aiMatcher', component:  MatchCalculationListComponent},

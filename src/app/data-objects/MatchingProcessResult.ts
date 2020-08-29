@@ -8,7 +8,7 @@ export class MatchingProcessResult {
   ingredientParsingDetails: ParsingResults;
   productsConsideredParsingResults: ProductMatchingResult[];
   incorrectProductsConsideredParsingResults: ProductMatchingResult[];
-
+  productNamesNotFound: string[];
 
 }
 // {"text": "2", "lemma": "2", "tag": "CD"}
