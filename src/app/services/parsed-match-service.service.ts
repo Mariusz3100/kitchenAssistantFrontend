@@ -14,11 +14,11 @@ export class ParsedMatchServiceService {
   constructor(private http: Http) { }
 
 
-  getParsedPhrases(dataUrl): Observable<MatchingProcessResult[]> {
+  getParsedPhrases(dataUrl): Observable<any> {
 
     const results = this.http
       .get(`${dataUrl}`)
-      .map(result => result.json().results);
+      .map(result => result.json());
     return results;
   }
 }

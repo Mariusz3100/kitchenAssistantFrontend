@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'aiProducts/:phrase', component:  ProductParsedListComponent},
   { path: 'aiProducts', component:  ProductParsedListComponent},
   { path: 'aiMatcher', component:  MatchCalculationListComponent},
+  { path: 'aiMatcher/:recipe', component:  MatchCalculationListComponent},
   { path: 'aiPhrases', component:  PhraseConsideringComponent},
   { path: 'inputs', component:  MatchInputsComponent},
   { path: 'stats', component:  StatDataComponent},

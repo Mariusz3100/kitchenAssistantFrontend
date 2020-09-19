@@ -35,16 +35,9 @@
 </div>
 
 <div class="col-lg-1 border">
-  <!--      Original tokens-->
-  <div *ngFor="let token of productParsing.baseResult.tokens">
-
-        <span>
-          {{token.text}}
-        </span>
-    <span>
-          <span class="{{token.tag}}"> {{token.tag}}</span> : <span class="{{token.pos}}">{{token.pos}} </span> :  <span
-      class="{{token.relationToParentType}}">{{token.relationToParentType}} </span> : {{token.head}}
-        </span>
+  <!-- type reasonings -->
+  <div *ngFor="let entry of productParsing.baseResult.productTypeReasoning">
+    {{entry[0]}} ({{entry[1]}})
   </div>
 </div>
 <div class="col-lg-1 border">
@@ -63,6 +56,18 @@
     <!--        </div>-->
   </div>
 </div>
+
+<div class="col-lg-1 border">
+  <!-- type reasonings -->
+  <div *ngFor="let entry of productParsing.baseResult.productTypeReasoning">
+    {{entry[0]}} ({{entry[1]}})
+  </div>
+
+</div>
+
+
+
+
 
 <div class="col-lg-1 border">
   <!--      Minimal phrase calculation Results-->
@@ -235,4 +240,9 @@
    <div> Verdict expected:{{productParsing.expectedVerdict}}</div>
 
   </div>
+
+
+
+
+
 </div>
