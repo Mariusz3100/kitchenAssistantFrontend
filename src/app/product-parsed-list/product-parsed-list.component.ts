@@ -12,7 +12,7 @@ export class ProductParsedListComponent implements OnInit {
 
 
   paramName = 'phrase';
-  private dataUrl = 'http://localhost:8080/tescoParse';
+  private dataUrl = 'http://localhost:8080/morrisonsParse';
   results: ParsingResults[];
   phrase: string;
 

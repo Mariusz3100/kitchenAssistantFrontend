@@ -22,6 +22,8 @@ export class MatchCalculationListComponent implements OnInit {
    productsFound: number;
    improperProductsFound: number;
    productsTotal: number;
+  ingredientsCorrectlyGuessedAsEmpty: number;
+  productsMissing: number;
 
 
   constructor(
@@ -47,8 +49,10 @@ export class MatchCalculationListComponent implements OnInit {
         this.ingredientsCovered = results.ingredientsCovered;
         this.productsFound = results.productsFound;
         this.improperProductsFound = results.improperProductsFound;
+        this.productsMissing = results.productsMissing;
         this.ingredientsTotal = results.ingredientsTotal;
         this.productsTotal = results.productsTotal;
+        this.ingredientsCorrectlyGuessedAsEmpty = results.ingredientsCorrectlyGuessedAsEmpty;
       } );
 
   }

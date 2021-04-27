@@ -1,7 +1,15 @@
-<h1>Ingredients with recommendation:{{ingredientsCovered}}/{{ingredientsTotal}}</h1>
-<h1>Products recommendation:{{productsFound}}</h1>
-<h1>Wrong Products recommendation:{{improperProductsFound}}</h1>
-<h1>Products considered:{{productsTotal}}</h1>
+<h1>Ingredients correctly predicted:({{ingredientsCovered}}+{{ingredientsCorrectlyGuessedAsEmpty}})/{{ingredientsTotal}}</h1>
+<h1>Products recommendation:{{productsFound}}/{{productsTotal}}</h1>
+<h1>Wrong Products recommendations:
+  <span class="verdict-false-positive"> {{improperProductsFound}}</span>
+  +
+  <span class="verdict-false-negative"> {{productsMissing}}</span>
+
+</h1>
+
+
+
+
 <div class="container extended-container">
 
   <div class="row">
