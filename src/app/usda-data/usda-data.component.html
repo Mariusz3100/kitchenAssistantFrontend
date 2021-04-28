@@ -1,0 +1,11 @@
+<div class="container">
+    <div  *ngFor="let line of result.lines" class="row">
+      <div  *ngFor="let result of line.results" class="col-sm border">
+        {{result.text}} ({{result.classification}})
+      </div>
+
+    </div>
+</div>
+
+
+

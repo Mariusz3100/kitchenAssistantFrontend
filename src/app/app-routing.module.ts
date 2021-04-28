@@ -8,6 +8,7 @@ import {MatchCalculationListComponent} from './match-calculation-list/match-calc
 import {MatchInputsComponent} from './match-inputs/match-inputs.component';
 import {StatDataComponent} from './stat-data/stat-data.component';
 import {PhraseConsideringComponent} from './phrase-considering/phrase-considering.component';
+import {UsdaDataComponent} from './usda-data/usda-data.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,9 @@ const routes: Routes = [
   { path: 'ner/:param', component: NerComponent },
   { path: 'aiParse', component: IngredientParsedListComponent },
   { path: 'aiParse/:refined', component: IngredientParsedListComponent },
+  { path: 'usdaData', component: UsdaDataComponent },
   { path: 'aiProducts/:phrase', component:  ProductParsedListComponent},
+  { path: 'aiProducts/:phrase', component:  UsdaDataComponent},
   { path: 'aiProducts', component:  ProductParsedListComponent},
   { path: 'aiMatcher', component:  MatchCalculationListComponent},
   { path: 'aiMatcher/:recipe', component:  MatchCalculationListComponent},

@@ -19,6 +19,7 @@ import { MatchInputsComponent } from './match-inputs/match-inputs.component';
 import { StatDataComponent } from './stat-data/stat-data.component';
 import { PhraseConsideringComponent } from './phrase-considering/phrase-considering.component';
 import { PhrasesMatchComponent } from './phrases-match/phrases-match.component';
+import { UsdaDataComponent } from './usda-data/usda-data.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { PhrasesMatchComponent } from './phrases-match/phrases-match.component';
     StatDataComponent,
     PhraseConsideringComponent,
     PhrasesMatchComponent,
+    UsdaDataComponent,
   ],
   imports: [
     BrowserModule,
