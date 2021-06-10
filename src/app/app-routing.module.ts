@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'aiParse/:refined', component: IngredientParsedListComponent },
   { path: 'usdaData', component: UsdaDataComponent },
   { path: 'aiProducts/:phrase', component:  ProductParsedListComponent},
-  { path: 'aiProducts/:phrase', component:  UsdaDataComponent},
+ // { path: 'aiProducts/:phrase', component:  UsdaDataComponent},
   { path: 'aiProducts', component:  ProductParsedListComponent},
   { path: 'aiMatcher', component:  MatchCalculationListComponent},
   { path: 'aiMatcher/:recipe', component:  MatchCalculationListComponent},

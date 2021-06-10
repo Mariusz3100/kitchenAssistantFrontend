@@ -243,3 +243,30 @@
   background-color: pink;
 
 }
+
+.FOOD{
+  border: 5px solid darkgreen;
+  width: min-content;
+  padding: 5px;
+}
+.NONE{
+  border: 5px solid darkgray;
+  width: min-content;
+  padding: 5px;
+}
+
+td{
+  border: solid;
+  max-width: 4cm   ;
+  min-width: 4cm   ;
+}
+
+table{
+  border: solid;
+}
+
+
+.table-vert-header{
+  border: 7px solid #03390a;
+
+}

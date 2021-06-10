@@ -1,5 +1,7 @@
 class UsdaElementParsed {
   text: string;
-  classification: string;
+  classificationCalculated: string;
+  classificationExpected: string;
+  typeOfList: string[];
 
 }

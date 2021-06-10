@@ -1,11 +1,36 @@
-<div class="container">
-    <div  *ngFor="let line of result.lines" class="row">
-      <div  *ngFor="let result of line.results" class="col-sm border">
-        {{result.text}} ({{result.classification}})
-      </div>
+<!--<div class="container">-->
+<!--  <div  class="row">-->
 
-    </div>
-</div>
+<!--    <div  *ngFor="let word of result.productWords" class="col-sm FOOD">-->
+<!--      {{word.text}}-->
 
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<BR>-->
+<!--<div class="container">-->
+<!--  <div  class="row">-->
+
+<!--    <div  *ngFor="let word of result.propertyWords" class="col-sm NONE">-->
+<!--      {{word.text}}-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<BR>-->
+
+
+<table *ngFor="let line of result.lines">
+
+    <tr *ngFor="let result of line.results" >
+      <td class="table-vert-header"><b>{{result.text}}</b></td>
+
+
+        <td *ngFor="let typeOf of result.typeOfList">{{typeOf}}</td>
+
+
+    </tr>
+
+  </table>
 
 
