@@ -1,3 +1,39 @@
+<table >
+
+  <tr *ngFor="let w of result.productWords" >
+    <td class="table-left-header"><b>{{w.text}}</b></td>
+
+
+    <td *ngFor="let typeOf of w.typeOfList">{{typeOf}}</td>
+
+
+  </tr>
+
+</table>
+
+<table >
+<!--  <tr>-->
+<!--    <td class="table-top-header" *ngFor="let w of result.typesFoundFinal">{{w.text}}</td>-->
+
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td *ngFor="let w of result.typesFoundFinal">{{w.count}}</td>-->
+
+<!--  </tr>-->
+  <tr *ngFor="let w of result.typesFoundFinal" >
+    <td class="table-top-header"><i>{{w.text}}</i></td>
+
+
+    <td>{{w.count}}</td>
+
+
+  </tr>
+
+</table>
+
+
+
+
 <!--<div class="container">-->
 <!--  <div  class="row">-->
 
@@ -20,17 +56,17 @@
 <!--<BR>-->
 
 
-<table *ngFor="let line of result.lines">
+<!--<table *ngFor="let line of result.lines">-->
 
-    <tr *ngFor="let result of line.results" >
-      <td class="table-vert-header"><b>{{result.text}}</b></td>
-
-
-        <td *ngFor="let typeOf of result.typeOfList">{{typeOf}}</td>
+<!--    <tr *ngFor="let result of line.results" >-->
+<!--      <td class="table-vert-header"><b>{{result.text}}</b></td>-->
 
 
-    </tr>
+<!--        <td *ngFor="let typeOf of result.typeOfList">{{typeOf}}</td>-->
 
-  </table>
+
+<!--    </tr>-->
+
+<!--  </table>-->
 
 

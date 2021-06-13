@@ -266,7 +266,12 @@ table{
 }
 
 
-.table-vert-header{
+.table-left-header{
   border: 7px solid #03390a;
+
+}
+
+.table-top-header{
+  border: 7px solid #0118b5;
 
 }
